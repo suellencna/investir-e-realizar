@@ -1,0 +1,1206 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade Financeiro — Descubra pra onde seu dinheiro está indo</title>
+    <meta name="description" content="Diagnóstico financeiro personalizado com IA. Descubra onde seu dinheiro está vazando e receba um plano de ação em minutos. Por apenas R$17,90.">
+
+    <!-- Open Graph (quando compartilhar no WhatsApp/Instagram) -->
+    <meta property="og:title" content="Upgrade Financeiro — Seu diagnóstico financeiro personalizado">
+    <meta property="og:description" content="Descubra pra onde seu dinheiro está indo e receba um plano de ação feito pra sua realidade. R$ 17,90.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://investirerealizar.com.br/upgrade">
+    <meta property="og:image" content="https://investirerealizar.com.br/upgrade/images/og-image.png">
+
+    <!-- Preconnect para fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           RESET & VARIÁVEIS
+        ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --azul-profundo: #0A2540;
+            --azul-medio: #1A3A5C;
+            --azul-claro: #E8F0FE;
+            --dourado: #D4A843;
+            --dourado-hover: #C49A35;
+            --dourado-glow: rgba(212, 168, 67, 0.3);
+            --verde-menta: #B7E4C7;
+            --verde-menta-light: #E8F5EE;
+            --verde-menta-bg: #F0FAF4;
+            --branco: #FFFFFF;
+            --cinza-100: #F7F8FA;
+            --cinza-200: #E9ECEF;
+            --cinza-500: #6B7280;
+            --cinza-700: #374151;
+            --cinza-900: #111827;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --section-padding: 80px 0;
+            --container-max: 960px;
+            --border-radius: 16px;
+            --border-radius-sm: 8px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--cinza-900);
+            background-color: var(--branco);
+            line-height: 1.7;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ========================================
+           BOTÃO CTA GLOBAL
+        ======================================== */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--dourado), var(--dourado-hover));
+            color: var(--branco);
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px var(--dourado-glow);
+            width: 100%;
+            max-width: 420px;
+        }
+
+            .cta-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 30px var(--dourado-glow);
+                background: linear-gradient(135deg, var(--dourado-hover), #B8892A);
+            }
+
+            .cta-button:active {
+                transform: translateY(0);
+            }
+
+        .cta-subtitle {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--cinza-500);
+        }
+
+        .cta-wrapper {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        /* ========================================
+           HERO
+        ======================================== */
+        .hero {
+            background: linear-gradient(160deg, var(--azul-profundo) 0%, var(--azul-medio) 100%);
+            color: var(--branco);
+            padding: 60px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -30%;
+                width: 500px;
+                height: 500px;
+                background: radial-gradient(circle, rgba(183,228,199,0.08) 0%, transparent 70%);
+                border-radius: 50%;
+            }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212,168,67,0.15);
+            border: 1px solid rgba(212,168,67,0.3);
+            color: var(--dourado);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 18px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: var(--font-body);
+            font-size: clamp(26px, 5vw, 40px);
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            .hero h1 .highlight {
+                color: var(--dourado);
+            }
+
+        .hero-sub {
+            font-size: clamp(16px, 2.5vw, 19px);
+            color: rgba(255,255,255,0.8);
+            max-width: 560px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .hero .cta-button {
+            max-width: 380px;
+        }
+
+        .hero .cta-subtitle {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .hero-price {
+            margin-top: 16px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+
+            .hero-price .old-price {
+                text-decoration: line-through;
+                opacity: 0.6;
+            }
+
+            .hero-price .new-price {
+                color: var(--dourado);
+                font-weight: 700;
+                font-size: 20px;
+            }
+
+        /* ========================================
+           IDENTIFICAÇÃO
+        ======================================== */
+        .identification {
+            padding: var(--section-padding);
+            background: var(--cinza-100);
+        }
+
+            .identification h2 {
+                text-align: center;
+                font-size: clamp(22px, 4vw, 30px);
+                font-weight: 800;
+                margin-bottom: 12px;
+                color: var(--azul-profundo);
+            }
+
+            .identification .section-sub {
+                text-align: center;
+                color: var(--cinza-500);
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+
+        .pain-list {
+            list-style: none;
+            max-width: 640px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+            .pain-list li {
+                background: var(--branco);
+                padding: 18px 22px;
+                border-radius: var(--border-radius-sm);
+                display: flex;
+                align-items: flex-start;
+                gap: 14px;
+                font-size: 15.5px;
+                color: var(--cinza-700);
+                box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+                line-height: 1.5;
+            }
+
+                .pain-list li .icon {
+                    font-size: 20px;
+                    flex-shrink: 0;
+                    margin-top: 1px;
+                }
+
+        .pain-transition {
+            text-align: center;
+            margin-top: 36px;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--azul-profundo);
+        }
+
+        /* ========================================
+           PROBLEMA
+        ======================================== */
+        .problem {
+            padding: var(--section-padding);
+            background: var(--branco);
+        }
+
+        .problem-content {
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .problem h2 {
+            font-size: clamp(22px, 4vw, 30px);
+            font-weight: 800;
+            color: var(--azul-profundo);
+            margin-bottom: 20px;
+        }
+
+        .problem p {
+            font-size: 16.5px;
+            color: var(--cinza-700);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .problem .emphasis {
+            background: var(--verde-menta-light);
+            border-left: 4px solid var(--verde-menta);
+            padding: 20px 24px;
+            border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+            margin: 28px 0;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--azul-profundo);
+            text-align: left;
+        }
+
+        /* ========================================
+           SOLUÇÃO
+        ======================================== */
+        .solution {
+            padding: var(--section-padding);
+            background: var(--verde-menta-bg);
+        }
+
+            .solution h2 {
+                text-align: center;
+                font-size: clamp(22px, 4vw, 30px);
+                font-weight: 800;
+                color: var(--azul-profundo);
+                margin-bottom: 14px;
+            }
+
+            .solution .section-sub {
+                text-align: center;
+                color: var(--cinza-500);
+                font-size: 16px;
+                margin-bottom: 40px;
+                max-width: 560px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .benefit-card {
+            background: var(--branco);
+            padding: 28px 24px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+            .benefit-card .benefit-icon {
+                font-size: 28px;
+            }
+
+            .benefit-card h3 {
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--azul-profundo);
+            }
+
+            .benefit-card p {
+                font-size: 14.5px;
+                color: var(--cinza-500);
+                line-height: 1.6;
+            }
+
+        /* ========================================
+           COMO FUNCIONA
+        ======================================== */
+        .how-it-works {
+            padding: var(--section-padding);
+            background: var(--branco);
+        }
+
+            .how-it-works h2 {
+                text-align: center;
+                font-size: clamp(22px, 4vw, 30px);
+                font-weight: 800;
+                color: var(--azul-profundo);
+                margin-bottom: 14px;
+            }
+
+            .how-it-works .section-sub {
+                text-align: center;
+                color: var(--cinza-500);
+                font-size: 16px;
+                margin-bottom: 44px;
+            }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--azul-profundo), var(--azul-medio));
+            color: var(--dourado);
+            font-weight: 800;
+            font-size: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-content h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--azul-profundo);
+            margin-bottom: 6px;
+        }
+
+        .step-content p {
+            font-size: 15px;
+            color: var(--cinza-500);
+            line-height: 1.6;
+        }
+
+        .step-screenshot {
+            margin-top: 14px;
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid var(--cinza-200);
+            overflow: hidden;
+        }
+
+        /* ========================================
+           PRA QUEM É
+        ======================================== */
+        .for-who {
+            padding: var(--section-padding);
+            background: var(--cinza-100);
+        }
+
+            .for-who h2 {
+                text-align: center;
+                font-size: clamp(22px, 4vw, 30px);
+                font-weight: 800;
+                color: var(--azul-profundo);
+                margin-bottom: 40px;
+            }
+
+        .for-who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .for-who-card {
+            padding: 32px 28px;
+            border-radius: var(--border-radius);
+            background: var(--branco);
+        }
+
+            .for-who-card.yes {
+                border: 2px solid var(--verde-menta);
+            }
+
+            .for-who-card.no {
+                border: 2px solid var(--cinza-200);
+            }
+
+            .for-who-card h3 {
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 18px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .for-who-card.yes h3 {
+                color: #2D8F5E;
+            }
+
+            .for-who-card.no h3 {
+                color: var(--cinza-500);
+            }
+
+            .for-who-card ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+                .for-who-card ul li {
+                    font-size: 14.5px;
+                    color: var(--cinza-700);
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    line-height: 1.5;
+                }
+
+        /* ========================================
+           QUEM CRIOU
+        ======================================== */
+        .creator {
+            padding: var(--section-padding);
+            background: var(--branco);
+        }
+
+        .creator-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .creator-photo {
+            flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+        }
+
+            .creator-photo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .creator-text h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--azul-profundo);
+            margin-bottom: 6px;
+        }
+
+        .creator-text .creator-title {
+            font-size: 14px;
+            color: var(--dourado);
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .creator-text p {
+            font-size: 15px;
+            color: var(--cinza-700);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        /* ========================================
+           OFERTA
+        ======================================== */
+        .offer {
+            padding: var(--section-padding);
+            background: linear-gradient(160deg, var(--azul-profundo) 0%, var(--azul-medio) 100%);
+            color: var(--branco);
+            text-align: center;
+        }
+
+            .offer h2 {
+                font-size: clamp(22px, 4vw, 30px);
+                font-weight: 800;
+                margin-bottom: 10px;
+            }
+
+            .offer .offer-sub {
+                font-size: 16px;
+                color: rgba(255,255,255,0.7);
+                margin-bottom: 36px;
+            }
+
+        .offer-box {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--border-radius);
+            padding: 40px 32px;
+            max-width: 480px;
+            margin: 0 auto 32px;
+            backdrop-filter: blur(10px);
+        }
+
+            .offer-box .product-name {
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+
+            .offer-box .price-old {
+                font-size: 18px;
+                color: rgba(255,255,255,0.4);
+                text-decoration: line-through;
+                margin-bottom: 4px;
+            }
+
+            .offer-box .price-new {
+                font-size: 44px;
+                font-weight: 800;
+                color: var(--dourado);
+                margin-bottom: 6px;
+            }
+
+                .offer-box .price-new small {
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+
+            .offer-box .price-info {
+                font-size: 13px;
+                color: rgba(255,255,255,0.5);
+                margin-bottom: 24px;
+            }
+
+            .offer-box .cta-button {
+                max-width: 100%;
+            }
+
+        .offer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .offer-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .offer-scarcity {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--dourado);
+            font-weight: 600;
+        }
+
+        /* ========================================
+           FAQ
+        ======================================== */
+        .faq {
+            padding: var(--section-padding);
+            background: var(--cinza-100);
+        }
+
+            .faq h2 {
+                text-align: center;
+                font-size: clamp(22px, 4vw, 30px);
+                font-weight: 800;
+                color: var(--azul-profundo);
+                margin-bottom: 40px;
+            }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--branco);
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 24px;
+            font-family: var(--font-body);
+            font-size: 15.5px;
+            font-weight: 600;
+            color: var(--azul-profundo);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            transition: background 0.2s;
+        }
+
+            .faq-question:hover {
+                background: var(--cinza-100);
+            }
+
+            .faq-question .arrow {
+                flex-shrink: 0;
+                transition: transform 0.3s;
+                font-size: 18px;
+                color: var(--cinza-500);
+            }
+
+        .faq-item.open .faq-question .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 20px;
+            font-size: 14.5px;
+            color: var(--cinza-500);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           CTA FINAL
+        ======================================== */
+        .final-cta {
+            padding: 60px 0;
+            background: var(--verde-menta-bg);
+            text-align: center;
+        }
+
+            .final-cta h2 {
+                font-size: clamp(20px, 4vw, 26px);
+                font-weight: 800;
+                color: var(--azul-profundo);
+                margin-bottom: 14px;
+                max-width: 560px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .final-cta p {
+                font-size: 16px;
+                color: var(--cinza-500);
+                margin-bottom: 28px;
+            }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .footer {
+            padding: 32px 0;
+            background: var(--azul-profundo);
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+        }
+
+            .footer a {
+                color: rgba(255,255,255,0.5);
+                text-decoration: underline;
+            }
+
+        /* ========================================
+           RESPONSIVO
+        ======================================== */
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 56px 0;
+            }
+
+            .for-who-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .creator-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .creator-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-box {
+                padding: 32px 20px;
+            }
+
+            .cta-button {
+                font-size: 16px;
+                padding: 16px 28px;
+            }
+        }
+
+        /* ========================================
+           ANIMAÇÕES
+        ======================================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">🔥 Lançamento — vagas limitadas</div>
+            <h1>Pra onde tá indo<br>o <span class="highlight">seu dinheiro</span>?</h1>
+            <p class="hero-sub">
+                Receba um diagnóstico financeiro personalizado em minutos.
+                Sem planilha. Sem julgamento. Só clareza e um plano de ação feito pra sua realidade.
+            </p>
+            <div class="cta-wrapper">
+                <a href="https://pay.hotmart.com/G105186478T?off=0q6z5r7h" class="cta-button" target="_blank">
+                    Quero meu diagnóstico — R$ 17,90
+                </a>
+                <span class="cta-subtitle">Acesso imediato · Pagamento único · Garantia Hotmart</span>
+            </div>
+            <div class="hero-price">
+                <span class="old-price">De R$ 47,90</span> &nbsp;por&nbsp; <span class="new-price">R$ 17,90</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== IDENTIFICAÇÃO ===================== -->
+    <section class="identification">
+        <div class="container">
+            <h2 class="fade-in">Isso soa familiar?</h2>
+            <p class="section-sub fade-in">Se você se identificar com pelo menos 2 itens, esse produto foi feito pra você.</p>
+            <ul class="pain-list">
+                <li class="fade-in">
+                    <span class="icon">😔</span>
+                    <span>Você trabalha, ganha seu dinheiro, mas no fim do mês <strong>não sabe pra onde ele foi</strong></span>
+                </li>
+                <li class="fade-in">
+                    <span class="icon">📉</span>
+                    <span>Já baixou planilha, assistiu vídeo, leu post... e <strong>continuou no vermelho</strong></span>
+                </li>
+                <li class="fade-in">
+                    <span class="icon">😰</span>
+                    <span>Sente <strong>vergonha ou ansiedade</strong> quando o assunto é dinheiro</span>
+                </li>
+                <li class="fade-in">
+                    <span class="icon">🔄</span>
+                    <span>Já tentou se organizar, até funcionou por um tempo, mas <strong>sempre volta ao caos</strong></span>
+                </li>
+                <li class="fade-in">
+                    <span class="icon">🚫</span>
+                    <span>Não tem reserva de emergência e <strong>sabe que precisa</strong>, mas não sabe por onde começar</span>
+                </li>
+                <li class="fade-in">
+                    <span class="icon">💭</span>
+                    <span>Quer investir, quer crescer, mas sente que <strong>falta o primeiro passo real</strong></span>
+                </li>
+            </ul>
+            <p class="pain-transition fade-in">
+                O problema nunca foi falta de informação.<br>
+                <strong>Foi falta de alguém que olhasse pra SUA situação.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== PROBLEMA ===================== -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-content fade-in">
+                <h2>Por que nada funcionou até agora?</h2>
+                <p>
+                    A internet está cheia de conselhos financeiros: <em>"gaste menos do que ganha"</em>,
+                    <em>"faça uma reserva de 6 meses"</em>, <em>"invista em renda fixa"</em>.
+                </p>
+                <p>Você já sabe tudo isso. <strong>O problema não é informação — é personalização.</strong></p>
+                <p>
+                    Nenhum vídeo no YouTube conhece seu salário, suas dívidas, seus medos,
+                    suas responsabilidades. Nenhuma planilha te pergunta como você está se sentindo
+                    antes de organizar seus números.
+                </p>
+                <div class="emphasis">
+                    💡 Você não precisa de mais teoria. Precisa de alguém que olhe pros seus números
+                    e te diga: <strong>
+                        "Com a sua renda e seus gastos, faça isso primeiro, depois aquilo,
+                        e em X meses você chega lá."
+                    </strong>
+                </div>
+                <p>É exatamente isso que o <strong>Upgrade Financeiro</strong> faz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SOLUÇÃO ===================== -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="fade-in">O que você recebe</h2>
+            <p class="section-sub fade-in">
+                Tudo isso em uma conversa simples, como um bate-papo — mas com resultado profissional.
+            </p>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🔍</span>
+                    <h3>Diagnóstico Personalizado</h3>
+                    <p>Baseado nos seus números reais — não em média de internet ou regras genéricas.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">📊</span>
+                    <h3>Nota de Saúde Financeira</h3>
+                    <p>De 0 a 10, pra você saber exatamente onde está hoje. Sem achismo.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🏷️</span>
+                    <h3>Classificação do Seu Perfil</h3>
+                    <p>Crítico, Instável, Estável ou Saudável — com orientação específica para cada nível.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">📋</span>
+                    <h3>Plano de Ação Concreto</h3>
+                    <p>Passos específicos pro SEU momento. Não é "gaste menos" — é o que fazer primeiro, segundo e terceiro.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🚰</span>
+                    <h3>Vazamentos Identificados</h3>
+                    <p>Aquele gasto que você nem percebe que está te sabotando todo mês.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">💚</span>
+                    <h3>Zero Julgamento</h3>
+                    <p>Tom acolhedor do início ao fim. Ninguém muda quando se sente envergonhado.</p>
+                </div>
+            </div>
+            <div class="cta-wrapper fade-in">
+                <a href="https://pay.hotmart.com/G105186478T?off=0q6z5r7h" class="cta-button" target="_blank">
+                    Quero meu diagnóstico agora
+                </a>
+                <span class="cta-subtitle">R$ 17,90 · Pagamento único · Acesso imediato</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== COMO FUNCIONA ===================== -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="fade-in">Veja como funciona na prática</h2>
+            <p class="section-sub fade-in">Uma conversa simples que transforma sua relação com o dinheiro</p>
+            <div class="steps-container">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Você inicia a conversa</h3>
+                        <p>O agente te cumprimenta e começa a entender sua realidade — sem pressa, sem pressão.</p>
+                        <div class="step-screenshot">
+                            <img src="/upgrade/images/print-upgrade-01.png" alt="Tela inicial do Upgrade Financeiro">
+                        </div>
+                    </div>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Ele mapeia seus números</h3>
+                        <p>Gastos fixos, variáveis, dívidas, renda — tudo no seu ritmo, como uma conversa entre amigas.</p>
+                        <div class="step-screenshot">
+                            <img src="/upgrade/images/print-upgrade-02.png" alt="Mapeamento de gastos no Upgrade Financeiro">
+                        </div>
+                    </div>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Você recebe seu plano de ação</h3>
+                        <p>Diagnóstico completo, nota de saúde financeira e passos claros do que fazer — personalizado pra você.</p>
+                        <div class="step-screenshot">
+                            <img src="/upgrade/images/print-upgrade-03.png" alt="Plano de ação do Upgrade Financeiro">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PRA QUEM É ===================== -->
+    <section class="for-who">
+        <div class="container">
+            <h2 class="fade-in">É pra você?</h2>
+            <div class="for-who-grid">
+                <div class="for-who-card yes fade-in">
+                    <h3>✅ É pra você se:</h3>
+                    <ul>
+                        <li><span class="check">→</span> Você ganha, mas não sabe pra onde o dinheiro vai</li>
+                        <li><span class="check">→</span> Já tentou se organizar e não conseguiu manter</li>
+                        <li><span class="check">→</span> Sente vergonha ou ansiedade com dinheiro</li>
+                        <li><span class="check">→</span> Não tem reserva de emergência</li>
+                        <li><span class="check">→</span> Quer um plano, não mais teoria</li>
+                        <li><span class="check">→</span> Tá cansada de improvisar suas decisões financeiras</li>
+                    </ul>
+                </div>
+                <div class="for-who-card no fade-in">
+                    <h3>🚫 Não é pra você se:</h3>
+                    <ul>
+                        <li><span class="check">→</span> Já tem planejamento financeiro funcionando</li>
+                        <li><span class="check">→</span> Busca consultoria de investimentos avançados</li>
+                        <li><span class="check">→</span> Quer fórmula mágica sem olhar pra sua realidade</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== QUEM CRIOU ===================== -->
+    <section class="creator">
+        <div class="container">
+            <div class="creator-content fade-in">
+                <div class="creator-photo">
+                    <img src="/upgrade/images/suellen-sofa.jpg" alt="Suellen — Educadora Financeira CEA Anbima">
+                </div>
+                <div class="creator-text">
+                    <h2>Suellen</h2>
+                    <p class="creator-title">Educadora Financeira · Certificada CEA pela Anbima</p>
+                    <p>Eu sei o que é olhar pro extrato e sentir um aperto no peito. Sei o que é querer mudar e não saber por onde começar.</p>
+                    <p>Criei o Upgrade Financeiro porque vi que a maioria das mulheres não precisa de mais informação — precisa de alguém que <strong>olhe pra situação delas</strong> e diga com clareza: <em>"Faz isso primeiro."</em></p>
+                    <p>Esse agente de IA foi treinado com a minha metodologia de organização, proteção e crescimento patrimonial. É como ter uma conversa comigo — disponível a qualquer hora, quantas vezes você precisar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== OFERTA ===================== -->
+    <section class="offer">
+        <div class="container">
+            <h2 class="fade-in">O primeiro passo custa menos que um lanche</h2>
+            <p class="offer-sub fade-in">Você arrisca R$ 17,90 em comida que esquece em uma hora. Aqui o retorno pode mudar sua vida financeira.</p>
+            <div class="offer-box fade-in">
+                <p class="product-name">⚡ Upgrade Financeiro</p>
+                <p class="price-old">R$ 47,90</p>
+                <p class="price-new"><small>R$</small> 17,90</p>
+                <p class="price-info">Pagamento único · Acesso imediato</p>
+                <a href="https://pay.hotmart.com/G105186478T?off=0q6z5r7h" class="cta-button" target="_blank">
+                    Quero meu diagnóstico agora
+                </a>
+                <p class="offer-scarcity">🔥 Preço de lançamento para os primeiros 100 compradores</p>
+            </div>
+            <div class="offer-badges fade-in">
+                <div class="offer-badge">🔒 Pagamento seguro</div>
+                <div class="offer-badge">⚡ Acesso imediato</div>
+                <div class="offer-badge">🛡️ Garantia Hotmart</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="fade-in">Perguntas frequentes</h2>
+            <div class="faq-list">
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        <span>É só uma IA? Não prefiro falar com uma pessoa?</span>
+                        <span class="arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">O Upgrade Financeiro foi treinado com metodologia real de educação financeira, pela Suellen, que é certificada CEA pela Anbima. Ele não é um chatbot genérico — é um agente especializado que faz as perguntas certas, na ordem certa, e entrega análise personalizada. Uma consulta humana com esse nível custaria de R$ 150 a R$ 500.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        <span>R$ 17,90 é muito barato. Funciona mesmo?</span>
+                        <span class="arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">O preço de R$ 17,90 é promoção real de lançamento — o valor cheio será R$ 47,90. O diagnóstico que você recebe é o mesmo. Você não paga menos por menos — paga menos por ser das primeiras.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        <span>Preciso entender de finanças pra usar?</span>
+                        <span class="arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Não. Zero. O agente foi feito pra quem está começando do zero ou pra quem já tentou e se perdeu. Se você sabe quanto ganha e mais ou menos quanto gasta, já é o suficiente.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        <span>Meus dados ficam seguros?</span>
+                        <span class="arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Em nenhum momento pedimos acesso a contas bancárias ou senhas. O agente trabalha com as informações que VOCÊ escolhe compartilhar — valores de renda, gastos estimados, dívidas. É como conversar com uma amiga sobre dinheiro, só que essa amiga te devolve um diagnóstico profissional.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        <span>Já baixei planilhas e nunca usei. Como isso é diferente?</span>
+                        <span class="arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Planilhas exigem disciplina diária e conhecimento técnico. O Upgrade Financeiro é uma conversa. Você responde perguntas em linguagem normal, e ele faz a análise pra você. Sem célula, sem fórmula. Você conversa, ele diagnostica, você recebe o plano.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        <span>E se minha situação financeira for muito ruim?</span>
+                        <span class="arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">O Upgrade Financeiro foi construído com um princípio: zero julgamento. Quanto pior a situação, mais importante é ter clareza. Muitas pessoas descobrem que o problema é menor do que a ansiedade fazia parecer. O diagnóstico transforma medo em plano.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        <span>Posso usar mais de uma vez?</span>
+                        <span class="arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Sim! Para os primeiros 100 compradores, o acesso é por tempo ilimitado. Refaça o diagnóstico sempre que quiser — quando receber um aumento, quando quitar uma dívida, quando sua vida mudar.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        <span>Tem tanto conteúdo grátis na internet. Por que pagar?</span>
+                        <span class="arrow">▾</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Conteúdo grátis te dá informação genérica: "gaste menos do que ganha". Você já sabe disso. O que você não tem é alguém que olhe para os SEUS números e te diga exatamente o que fazer primeiro, segundo e terceiro. Isso é personalização — não teoria.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section class="final-cta">
+        <div class="container fade-in">
+            <h2>Sua vida financeira não vai mudar com mais um vídeo de dicas</h2>
+            <p>Ela muda quando você olha de frente pra onde está — e recebe um caminho claro pra onde quer ir.</p>
+            <div class="cta-wrapper">
+                <a href="https://pay.hotmart.com/G105186478T?off=0q6z5r7h" class="cta-button" target="_blank">
+                    Começar meu Upgrade Financeiro — R$ 17,90
+                </a>
+                <span class="cta-subtitle">Acesso imediato · Pagamento único · Garantia Hotmart</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Investir é Realizar · Suellen — Educadora Financeira · CEA Anbima</p>
+        </div>
+    </footer>
+
+    <!-- ===================== JS ===================== -->
+    <script>// FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));</script>
+
+</body>
+</html>

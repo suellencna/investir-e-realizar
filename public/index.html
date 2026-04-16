@@ -10,13 +10,12 @@
     <style>
         /* ========== RESET & BASE ========== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: #0A2540;
-            color: #fff;
+            background: #033b6c;
+            color: #f4f3f0;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -31,17 +30,15 @@
             padding: 0 24px;
         }
 
-        .gold { color: #D4A843; }
+        .gold { color: #fdc402; }
 
-        .section {
-            padding: 80px 0;
-        }
+        .section { padding: 80px 0; }
 
         .section-label {
             display: inline-block;
-            background: rgba(212,168,67,0.12);
-            border: 1px solid rgba(212,168,67,0.25);
-            color: #D4A843;
+            background: rgba(253,196,2,0.12);
+            border: 1px solid rgba(253,196,2,0.25);
+            color: #fdc402;
             font-size: 12px;
             font-weight: 600;
             padding: 5px 16px;
@@ -59,7 +56,7 @@
         }
 
         .section-subtitle {
-            color: rgba(255,255,255,0.55);
+            color: rgba(244,243,240,0.55);
             font-size: 17px;
             max-width: 600px;
             margin-bottom: 48px;
@@ -72,10 +69,10 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(10,37,64,0.92);
+            background: rgba(3,59,108,0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255,255,255,0.06);
-            padding: 16px 0;
+            padding: 12px 0;
             transition: all 0.3s ease;
         }
 
@@ -85,9 +82,9 @@
             align-items: center;
         }
 
-        .nav-logo {
-            font-size: 18px;
-            font-weight: 700;
+        .nav-logo img {
+            height: 40px;
+            width: auto;
         }
 
         .nav-links {
@@ -98,18 +95,18 @@
 
         .nav-links a {
             font-size: 14px;
-            color: rgba(255,255,255,0.6);
+            color: rgba(244,243,240,0.6);
             font-weight: 500;
             transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: #D4A843; }
+        .nav-links a:hover { color: #fdc402; }
 
         .nav-toggle {
             display: none;
             background: none;
             border: none;
-            color: #fff;
+            color: #f4f3f0;
             font-size: 24px;
             cursor: pointer;
         }
@@ -120,6 +117,7 @@
             display: flex;
             align-items: center;
             padding-top: 80px;
+            background: linear-gradient(135deg, #0033a0 0%, #033b6c 40%, #4e6a83 100%);
         }
 
         .hero .container {
@@ -132,14 +130,14 @@
         .hero-content { max-width: 540px; }
 
         .hero h1 {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 20px;
         }
 
         .hero p {
-            color: rgba(255,255,255,0.6);
+            color: rgba(244,243,240,0.7);
             font-size: 17px;
             margin-bottom: 32px;
             line-height: 1.7;
@@ -156,8 +154,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(135deg, #D4A843, #C49A35);
-            color: #fff;
+            background: linear-gradient(135deg, #fdc402, #ffd300);
+            color: #033b6c;
             padding: 16px 32px;
             border-radius: 50px;
             font-weight: 700;
@@ -167,21 +165,19 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(212,168,67,0.35);
+            box-shadow: 0 8px 28px rgba(253,196,2,0.35);
         }
 
         .btn-secondary {
-            color: #D4A843;
+            color: #fdc402;
             font-weight: 600;
             font-size: 14px;
             padding: 8px 0;
-            border-bottom: 1px solid rgba(212,168,67,0.3);
+            border-bottom: 1px solid rgba(253,196,2,0.3);
             transition: border-color 0.2s;
         }
 
-        .btn-secondary:hover {
-            border-color: #D4A843;
-        }
+        .btn-secondary:hover { border-color: #fdc402; }
 
         .hero-image {
             display: flex;
@@ -194,58 +190,20 @@
             height: 360px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid rgba(212,168,67,0.3);
+            border: 4px solid rgba(253,196,2,0.3);
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
-        /* Placeholder caso não tenha foto */
         .hero-photo-placeholder {
             width: 360px;
             height: 360px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(212,168,67,0.15), rgba(212,168,67,0.05));
-            border: 4px solid rgba(212,168,67,0.2);
+            background: linear-gradient(135deg, rgba(253,196,2,0.15), rgba(253,196,2,0.05));
+            border: 4px solid rgba(253,196,2,0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 120px;
-        }
-
-        /* ========== CREDENCIAIS (barra) ========== */
-        .credentials-bar {
-            background: rgba(212,168,67,0.06);
-            border-top: 1px solid rgba(212,168,67,0.1);
-            border-bottom: 1px solid rgba(212,168,67,0.1);
-            padding: 32px 0;
-        }
-
-        .credentials-grid {
-            display: flex;
-            justify-content: center;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
-
-        .credential-item {
-            text-align: center;
-        }
-
-        .credential-icon {
-            font-size: 28px;
-            margin-bottom: 6px;
-        }
-
-        .credential-label {
-            font-size: 13px;
-            font-weight: 700;
-            color: #D4A843;
-            letter-spacing: 0.5px;
-        }
-
-        .credential-desc {
-            font-size: 11px;
-            color: rgba(255,255,255,0.4);
-            margin-top: 2px;
         }
 
         /* ========== SOBRE ========== */
@@ -253,7 +211,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: center;
+            align-items: start;
         }
 
         .sobre-text h2 {
@@ -264,14 +222,14 @@
         }
 
         .sobre-text p {
-            color: rgba(255,255,255,0.6);
+            color: rgba(244,243,240,0.65);
             font-size: 16px;
             margin-bottom: 16px;
             line-height: 1.8;
         }
 
         .sobre-text p strong {
-            color: #fff;
+            color: #f4f3f0;
         }
 
         .sobre-image {
@@ -287,7 +245,48 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
-        /* ========== SITUAÇÕES (Como posso te ajudar) ========== */
+        /* ========== CREDENCIAIS ========== */
+        .credentials-section {
+            margin-top: 48px;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .credential-card {
+            background: rgba(244,243,240,0.04);
+            border: 1px solid rgba(244,243,240,0.08);
+            border-radius: 12px;
+            padding: 24px 16px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .credential-card:hover {
+            border-color: rgba(253,196,2,0.3);
+        }
+
+        .credential-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .credential-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fdc402;
+        }
+
+        .credential-desc {
+            font-size: 12px;
+            color: rgba(244,243,240,0.45);
+            margin-top: 4px;
+        }
+
+        /* ========== SITUAÇÕES ========== */
         .situacoes-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -295,8 +294,8 @@
         }
 
         .situacao-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(244,243,240,0.04);
+            border: 1px solid rgba(244,243,240,0.08);
             border-radius: 16px;
             padding: 32px 24px;
             transition: transform 0.2s, border-color 0.2s;
@@ -304,13 +303,10 @@
 
         .situacao-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(212,168,67,0.3);
+            border-color: rgba(253,196,2,0.3);
         }
 
-        .situacao-emoji {
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
+        .situacao-emoji { font-size: 36px; margin-bottom: 16px; }
 
         .situacao-card h3 {
             font-size: 17px;
@@ -320,14 +316,14 @@
         }
 
         .situacao-card p {
-            color: rgba(255,255,255,0.5);
+            color: rgba(244,243,240,0.5);
             font-size: 14px;
             margin-bottom: 20px;
             line-height: 1.7;
         }
 
         .situacao-link {
-            color: #D4A843;
+            color: #fdc402;
             font-size: 13px;
             font-weight: 600;
             transition: opacity 0.2s;
@@ -343,8 +339,8 @@
         }
 
         .produto-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(244,243,240,0.04);
+            border: 1px solid rgba(244,243,240,0.08);
             border-radius: 16px;
             padding: 32px;
             display: flex;
@@ -354,7 +350,7 @@
 
         .produto-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(212,168,67,0.3);
+            border-color: rgba(253,196,2,0.3);
         }
 
         .produto-tag {
@@ -370,27 +366,21 @@
         }
 
         .tag-gratuito {
-            background: rgba(34,197,94,0.15);
-            color: #22c55e;
-            border: 1px solid rgba(34,197,94,0.3);
+            background: rgba(183,228,199,0.15);
+            color: #b7e4c7;
+            border: 1px solid rgba(183,228,199,0.3);
         }
 
         .tag-ebook {
-            background: rgba(59,130,246,0.15);
-            color: #3b82f6;
-            border: 1px solid rgba(59,130,246,0.3);
+            background: rgba(91,112,142,0.2);
+            color: #5b708e;
+            border: 1px solid rgba(91,112,142,0.3);
         }
 
         .tag-programa {
-            background: rgba(212,168,67,0.15);
-            color: #D4A843;
-            border: 1px solid rgba(212,168,67,0.3);
-        }
-
-        .tag-breve {
-            background: rgba(255,255,255,0.08);
-            color: rgba(255,255,255,0.5);
-            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(253,196,2,0.15);
+            color: #fdc402;
+            border: 1px solid rgba(253,196,2,0.3);
         }
 
         .produto-card h3 {
@@ -399,24 +389,45 @@
             margin-bottom: 12px;
         }
 
-        .produto-card p {
-            color: rgba(255,255,255,0.5);
+        .produto-desc {
+            color: rgba(244,243,240,0.5);
             font-size: 14px;
             line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .produto-features {
+            list-style: none;
             margin-bottom: 20px;
-            flex-grow: 1;
+        }
+
+        .produto-features li {
+            color: rgba(244,243,240,0.6);
+            font-size: 13px;
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .produto-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #fdc402;
         }
 
         .produto-price {
             font-size: 14px;
-            color: rgba(255,255,255,0.4);
+            color: rgba(244,243,240,0.4);
             margin-bottom: 16px;
+            margin-top: auto;
         }
 
         .produto-price .price-current {
-            color: #D4A843;
+            color: #fdc402;
             font-weight: 700;
-            font-size: 20px;
+            font-size: 22px;
         }
 
         .produto-price .price-old {
@@ -424,17 +435,47 @@
             margin-right: 8px;
         }
 
+        .produto-bonus {
+            background: rgba(253,196,2,0.08);
+            border: 1px solid rgba(253,196,2,0.15);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 13px;
+            color: #fdc402;
+            margin-bottom: 16px;
+        }
+
         .produto-cta {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            color: #D4A843;
+            color: #fdc402;
             font-weight: 600;
             font-size: 14px;
             transition: gap 0.2s;
         }
 
         .produto-cta:hover { gap: 10px; }
+
+        .btn-produto {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #fdc402, #ffd300);
+            color: #033b6c;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: fit-content;
+        }
+
+        .btn-produto:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(253,196,2,0.3);
+        }
 
         /* ========== FAQ ========== */
         .faq-list {
@@ -443,14 +484,14 @@
         }
 
         .faq-item {
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(244,243,240,0.08);
         }
 
         .faq-question {
             width: 100%;
             background: none;
             border: none;
-            color: #fff;
+            color: #f4f3f0;
             font-family: inherit;
             font-size: 16px;
             font-weight: 600;
@@ -463,7 +504,7 @@
             gap: 16px;
         }
 
-        .faq-question:hover { color: #D4A843; }
+        .faq-question:hover { color: #fdc402; }
 
         .faq-arrow {
             font-size: 18px;
@@ -471,9 +512,7 @@
             flex-shrink: 0;
         }
 
-        .faq-item.active .faq-arrow {
-            transform: rotate(180deg);
-        }
+        .faq-item.active .faq-arrow { transform: rotate(180deg); }
 
         .faq-answer {
             max-height: 0;
@@ -483,19 +522,19 @@
 
         .faq-answer-inner {
             padding: 0 0 24px 0;
-            color: rgba(255,255,255,0.55);
+            color: rgba(244,243,240,0.55);
             font-size: 15px;
             line-height: 1.7;
         }
 
-        /* ========== INSTAGRAM CTA ========== */
+        /* ========== INSTAGRAM ========== */
         .instagram-section {
             text-align: center;
             padding: 60px 0;
         }
 
         .instagram-section p {
-            color: rgba(255,255,255,0.5);
+            color: rgba(244,243,240,0.5);
             font-size: 16px;
             margin-bottom: 24px;
         }
@@ -518,10 +557,15 @@
             box-shadow: 0 8px 28px rgba(225,48,108,0.3);
         }
 
+        .instagram-icon {
+            width: 22px;
+            height: 22px;
+        }
+
         /* ========== FOOTER ========== */
         .footer {
-            background: rgba(0,0,0,0.2);
-            border-top: 1px solid rgba(255,255,255,0.06);
+            background: rgba(0,0,0,0.25);
+            border-top: 1px solid rgba(244,243,240,0.06);
             padding: 48px 0 32px;
         }
 
@@ -532,20 +576,26 @@
             margin-bottom: 40px;
         }
 
+        .footer-logo {
+            height: 36px;
+            width: auto;
+            margin-bottom: 12px;
+        }
+
         .footer h4 {
             font-size: 14px;
             font-weight: 700;
             margin-bottom: 16px;
-            color: rgba(255,255,255,0.8);
+            color: rgba(244,243,240,0.8);
         }
 
         .footer p, .footer a {
             font-size: 13px;
-            color: rgba(255,255,255,0.4);
+            color: rgba(244,243,240,0.4);
             line-height: 1.8;
         }
 
-        .footer a:hover { color: #D4A843; }
+        .footer a:hover { color: #fdc402; }
 
         .footer-links {
             list-style: none;
@@ -555,11 +605,11 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.06);
+            border-top: 1px solid rgba(244,243,240,0.06);
             padding-top: 24px;
             text-align: center;
             font-size: 12px;
-            color: rgba(255,255,255,0.25);
+            color: rgba(244,243,240,0.25);
         }
 
         /* ========== RESPONSIVO ========== */
@@ -569,13 +619,13 @@
                 display: flex;
                 flex-direction: column;
                 position: absolute;
-                top: 60px;
+                top: 64px;
                 left: 0;
                 right: 0;
-                background: rgba(10,37,64,0.98);
+                background: rgba(3,59,108,0.98);
                 padding: 24px;
                 gap: 16px;
-                border-bottom: 1px solid rgba(255,255,255,0.08);
+                border-bottom: 1px solid rgba(244,243,240,0.08);
             }
             .nav-toggle { display: block; }
 
@@ -589,13 +639,15 @@
             .hero-image { order: -1; }
             .hero-photo, .hero-photo-placeholder { width: 220px; height: 220px; }
 
-            .credentials-grid { gap: 24px; }
-
             .sobre .container {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
             .sobre-image { order: -1; }
+
+            .credentials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
             .situacoes-grid { grid-template-columns: 1fr; }
             .produtos-grid { grid-template-columns: 1fr; }
@@ -615,7 +667,13 @@
     <!-- ========== NAVBAR ========== -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="nav-logo">Investir é <span class="gold">Realizar</span></a>
+            <a href="#" class="nav-logo">
+                <!--
+                    SUELLEN: Coloque sua logo em public/images/logo.png
+                    Ideal: fundo transparente, PNG, largura ~200px
+                -->
+                <img src="images/logo.png" alt="Investir é Realizar">
+            </a>
             <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
@@ -642,48 +700,15 @@
             <div class="hero-image">
                 <img src="images/IMG_2828b.jpg" alt="Suellen Pinto" class="hero-photo">
                 <!--
-                    SUELLEN: Troque pelo caminho da sua foto profissional.
-                    Exemplo: <img src="images/suellen.jpg" alt="Suellen Pinto" class="hero-photo">
-                    Enquanto não tiver foto, fica o placeholder abaixo.
+                    SUELLEN: Troque pelo caminho da sua foto.
+                    Exemplo: <img src="images/suellen-hero.jpg" alt="Suellen Pinto" class="hero-photo">
                 -->
                 <div class="hero-photo-placeholder">👩🏻‍💼</div>
             </div>
         </div>
     </section>
 
-    <!-- ========== BARRA DE CREDENCIAIS ========== -->
-    <div class="credentials-bar">
-        <div class="container">
-            <div class="credentials-grid">
-                <div class="credential-item">
-                    <div class="credential-icon">🏛️</div>
-                    <div class="credential-label">CEA Anbima</div>
-                    <div class="credential-desc">Especialista em Investimentos</div>
-                </div>
-                <div class="credential-item">
-                    <div class="credential-icon">📊</div>
-                    <div class="credential-label">CPA-20</div>
-                    <div class="credential-desc">Assessoria de Investimentos</div>
-                </div>
-                <div class="credential-item">
-                    <div class="credential-icon">📋</div>
-                    <div class="credential-label">Ancord</div>
-                    <div class="credential-desc">Agente Autônomo de Investimentos</div>
-                </div>
-                <div class="credential-item">
-                    <div class="credential-icon">🏢</div>
-                    <div class="credential-label">Experiência</div>
-                    <!--
-                        SUELLEN: Se quiser remover XP/Santander, troque por:
-                        "Corretora de valores e banco"
-                    -->
-                    <div class="credential-desc">XP · Santander · Orama</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ========== SOBRE ========== -->
+    <!-- ========== SOBRE + CREDENCIAIS ========== -->
     <section id="sobre" class="section sobre">
         <div class="container">
             <div class="sobre-text">
@@ -691,22 +716,44 @@
                 <h2>Quem está por trás da <span class="gold">Investir é Realizar</span></h2>
                 <p>Eu sou a <strong>Suellen Pinto</strong>.</p>
                 <p>Comecei minha carreira no mercado financeiro trabalhando em corretora de valores e banco — incluindo <strong>XP e Santander</strong>.</p>
-                <!--
-                    SUELLEN: Se preferir não mencionar as empresas, troque a linha acima por:
-                    <p>Comecei minha carreira no mercado financeiro trabalhando em corretora de valores e banco.</p>
-                -->
                 <p>Lá dentro, percebi algo que me incomodava: <strong>as necessidades reais do cliente raramente eram prioridade.</strong> O que importava era a meta da empresa, não o futuro de quem estava investindo. E isso não combinava com os meus valores.</p>
                 <p><strong>Escolhi outro caminho.</strong></p>
                 <p>Criei a Investir é Realizar e desenvolvi um método simples para ajudar pessoas — especialmente mulheres que estão começando — a organizarem seu dinheiro <strong>sem medo e sem complicação</strong>.</p>
                 <p>Porque o dinheiro é só a ferramenta. O que importa mesmo são os <span class="gold"><strong>momentos que ele torna possíveis</strong></span>.</p>
+
+                <!-- CREDENCIAIS agora aqui dentro, abaixo do "Sobre" -->
+                <div class="credentials-section">
+                    <div class="credentials-grid">
+                        <div class="credential-card">
+                            <div class="credential-icon">🏛️</div>
+                            <div class="credential-label">CEA Anbima</div>
+                            <div class="credential-desc">Especialista em Investimentos</div>
+                        </div>
+                        <div class="credential-card">
+                            <div class="credential-icon">📊</div>
+                            <div class="credential-label">CPA-20</div>
+                            <div class="credential-desc">Assessoria de Investimentos</div>
+                        </div>
+                        <div class="credential-card">
+                            <div class="credential-icon">📋</div>
+                            <div class="credential-label">Ancord</div>
+                            <div class="credential-desc">Agente Autônomo de Investimentos</div>
+                        </div>
+                        <div class="credential-card">
+                            <div class="credential-icon">🏢</div>
+                            <div class="credential-label">Experiência</div>
+                            <div class="credential-desc">XP · Santander · Orama</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="sobre-image">
-                <img src="images/img_suellen(1).jpg" alt="Suellen Pinto" class="sobre-photo">
+                <img src="images/img_suellen(1).jpeg" alt="Suellen Pinto" class="sobre-photo">
                 <!--
-                    SUELLEN: Coloque aqui uma segunda foto sua (mais casual/acolhedora).
-                    Exemplo: <img src="images/suellen-sobre.jpg" alt="Suellen Pinto" class="sobre-photo">
+                    SUELLEN: Coloque sua foto aqui.
+                    <img src="images/suellen-sobre.jpg" alt="Suellen Pinto" class="sobre-photo">
                 -->
-                <div class="hero-photo-placeholder" style="width:320px;height:380px;border-radius:16px;font-size:80px;">✨</div>
+                <div class="hero-photo-placeholder" style="width:320px;height:400px;border-radius:16px;font-size:80px;">✨</div>
             </div>
         </div>
     </section>
@@ -751,41 +798,75 @@
             <p class="section-subtitle">Do primeiro passo à independência financeira — no seu ritmo.</p>
 
             <div class="produtos-grid">
+
                 <!-- Comparador -->
                 <div class="produto-card">
                     <span class="produto-tag tag-gratuito">Gratuito</span>
                     <h3>Comparador de Renda Fixa</h3>
-                    <p>Compare CDB, LCI, LCA e Tesouro Direto lado a lado. Veja qual rende mais já com impostos e taxas descontados — de um jeito que faz sentido.</p>
-                    <a href="https://comparador.investirerealizar.com.br/" class="produto-cta" target="_blank">Acessar o Comparador →</a>
+                    <p class="produto-desc">Compare CDB, LCI, LCA e Tesouro Direto lado a lado. Veja qual rende mais já com impostos e taxas descontados — de um jeito que faz sentido.</p>
+                    <div class="produto-price">
+                        <span class="price-current">R$ 0,00</span> · acesso livre
+                    </div>
+                    <a href="https://comparador.investirerealizar.com.br/" class="btn-produto" target="_blank">Acessar o Comparador →</a>
                 </div>
 
                 <!-- Upgrade Financeiro -->
                 <div class="produto-card">
                     <span class="produto-tag tag-programa">Diagnóstico com IA</span>
                     <h3>Upgrade Financeiro</h3>
-                    <p>Receba um diagnóstico financeiro personalizado em minutos. Uma conversa com IA treinada pela Suellen que analisa seus números reais e entrega um plano de ação feito pra sua realidade. Sem planilha. Sem julgamento. Só clareza.</p>
+                    <p class="produto-desc">Receba um diagnóstico financeiro personalizado em minutos. Uma conversa com IA treinada pela Suellen que analisa seus números reais e entrega um plano de ação feito pra sua realidade. Sem planilha. Sem julgamento. Só clareza.</p>
+                    <ul class="produto-features">
+                        <li>Diagnóstico baseado nos seus números reais</li>
+                        <li>Nota de saúde financeira de 0 a 10</li>
+                        <li>Classificação do seu perfil financeiro</li>
+                        <li>Plano de ação concreto e personalizado</li>
+                        <li>Vazamentos financeiros identificados</li>
+                        <li>Acesso imediato, quantas vezes quiser</li>
+                    </ul>
                     <div class="produto-price">
                         <span class="price-old">R$ 47,90</span>
                         <span class="price-current">R$ 17,90</span> · pagamento único
                     </div>
-                    <a href="/upgrade" class="produto-cta">Quero meu diagnóstico →</a>
+                    <a href="/upgrade" class="btn-produto">Quero meu diagnóstico →</a>
                 </div>
 
-                <!-- E-book 1 -->
+                <!-- E-book 1: Do Caos à Primeira Reserva -->
                 <div class="produto-card">
                     <span class="produto-tag tag-ebook">E-book</span>
                     <h3>Do Caos Financeiro à Primeira Reserva</h3>
-                    <p>O passo a passo para organizar suas finanças, sair do vermelho e construir sua primeira reserva de emergência — mesmo começando do zero.</p>
-                    <a href="https://go.hotmart.com/T103027569U" class="produto-cta" target="_blank">Baixar e-book →</a>
+                    <p class="produto-desc">O guia pra quem quer organizar o dinheiro — sem economês, sem medo e sem fórmula mágica. Pra quem sente que o dinheiro some antes do mês acabar.</p>
+                    <ul class="produto-features">
+                        <li>Raio-X real da sua vida financeira — sem culpa</li>
+                        <li>Identifique o que te trava e como sair do lugar essa semana</li>
+                        <li>Separe o essencial do que é escolha — sem cortar tudo</li>
+                        <li>Monte sua primeira reserva, mesmo com pouco</li>
+                    </ul>
+                    <div class="produto-bonus">🎁 Inclui planilha prática exclusiva pra aplicar tudo, mês a mês</div>
+                    <div class="produto-price">
+                        <span class="price-current">R$ 47,90</span>
+                    </div>
+                    <a href="https://go.hotmart.com/T103027569U" class="btn-produto" target="_blank">Quero me organizar →</a>
                 </div>
 
-                <!-- E-book 2 -->
+                <!-- E-book 2: Manual do Primeiro Investimento -->
                 <div class="produto-card">
                     <span class="produto-tag tag-ebook">E-book</span>
                     <h3>Manual do Primeiro Investimento</h3>
-                    <p>Entenda de uma vez por todas como funciona a renda fixa, descubra seu perfil de investidor e faça seu primeiro aporte com segurança.</p>
-                    <a href="https://go.hotmart.com/J103013538B" class="produto-cta" target="_blank">Baixar e-book →</a>
+                    <p class="produto-desc">O passo a passo pra começar a investir com segurança — mesmo do zero. Pra quem cuida de tudo, mas ainda não cuida do próprio futuro financeiro.</p>
+                    <ul class="produto-features">
+                        <li>O que realmente significa investir e por onde começar</li>
+                        <li>Opções seguras para iniciantes</li>
+                        <li>Por que a poupança pode não ser a melhor escolha</li>
+                        <li>Como escolher entre banco e corretora</li>
+                        <li>Como fazer seu primeiro investimento na prática</li>
+                        <li>Ritual de 15 minutos por mês pra manter constância</li>
+                    </ul>
+                    <div class="produto-price">
+                        <span class="price-current">R$ 47,90</span>
+                    </div>
+                    <a href="https://go.hotmart.com/J103013538B" class="btn-produto" target="_blank">Quero começar a investir →</a>
                 </div>
+
             </div>
         </div>
     </section>
@@ -845,7 +926,7 @@
                         <span class="faq-arrow">▼</span>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Os e-books resolvem problemas específicos (organizar o dinheiro ou fazer o primeiro investimento) com conteúdo didático. O Upgrade Financeiro é personalizado: ele olha pros SEUS números e te diz exatamente o que fazer primeiro, segundo e terceiro. Um é conteúdo, o outro é diagnóstico.</div>
+                        <div class="faq-answer-inner">Os e-books resolvem problemas específicos com conteúdo didático (organizar o dinheiro ou fazer o primeiro investimento). O Upgrade Financeiro é personalizado: ele olha pros SEUS números e te diz exatamente o que fazer primeiro, segundo e terceiro. Um é conteúdo, o outro é diagnóstico.</div>
                     </div>
                 </div>
 
@@ -868,7 +949,12 @@
             <span class="section-label">Me acompanhe</span>
             <h2 class="section-title" style="margin-bottom:12px;">Conteúdo gratuito toda semana no <span class="gold">Instagram</span></h2>
             <p>Dicas práticas, bastidores e reflexões sobre dinheiro e vida — sem economês.</p>
-            <a href="https://www.instagram.com/suellenandradepinto/" class="btn-instagram" target="_blank">📸 @suellenandradepinto</a>
+            <a href="https://www.instagram.com/suellenandradepinto/" class="btn-instagram" target="_blank">
+                <svg class="instagram-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                @suellenandradepinto
+            </a>
         </div>
     </section>
 
@@ -877,7 +963,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h4>Investir é <span class="gold">Realizar</span></h4>
+                    <img src="images/logo.png" alt="Investir é Realizar" class="footer-logo">
                     <p>Educação financeira sem complicação.<br>Dinheiro é meio, não fim.</p>
                 </div>
                 <div>
@@ -910,13 +996,11 @@
             const answer = item.querySelector('.faq-answer');
             const isActive = item.classList.contains('active');
 
-            // Fecha todos
             document.querySelectorAll('.faq-item').forEach(i => {
                 i.classList.remove('active');
                 i.querySelector('.faq-answer').style.maxHeight = null;
             });
 
-            // Abre o clicado (se não estava ativo)
             if (!isActive) {
                 item.classList.add('active');
                 answer.style.maxHeight = answer.scrollHeight + 'px';

@@ -82,10 +82,29 @@
             align-items: center;
         }
 
+        /* Adicione isso no bloco do NAVBAR */
         .nav-logo img {
             height: 40px;
             width: auto;
+            filter: brightness(0) invert(1); /* torna a logo branca */
         }
+
+        /* Se quiser manter a estrela amarela, use esta versão alternativa: */
+        /*
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            filter: brightness(2.5);
+        }
+        */
+
+        .footer-logo {
+            height: 36px;
+            width: auto;
+            margin-bottom: 12px;
+            filter: brightness(0) invert(1); /* mesma coisa no footer */
+        }
+
 
         .nav-links {
             display: flex;
@@ -246,21 +265,18 @@
         }
 
         /* ========== CREDENCIAIS ========== */
-        .credentials-section {
-            margin-top: 48px;
-        }
-
         .credentials-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
+            max-width: 100%; /* agora usa a largura total do container */
         }
 
         .credential-card {
             background: rgba(244,243,240,0.04);
             border: 1px solid rgba(244,243,240,0.08);
             border-radius: 12px;
-            padding: 24px 16px;
+            padding: 28px 20px;
             text-align: center;
             transition: border-color 0.2s;
         }
@@ -285,6 +301,7 @@
             color: rgba(244,243,240,0.45);
             margin-top: 4px;
         }
+
 
         /* ========== SITUAÇÕES ========== */
         .situacoes-grid {
@@ -580,19 +597,27 @@
             height: 36px;
             width: auto;
             margin-bottom: 12px;
+            filter: brightness(0) invert(1);
         }
 
         .footer h4 {
             font-size: 14px;
             font-weight: 700;
             margin-bottom: 16px;
-            color: rgba(244,243,240,0.8);
+            color: #f4f3f0; /* era 0.8 de opacidade, agora totalmente visível */
         }
 
-        .footer p, .footer a {
+        .footer p {
             font-size: 13px;
-            color: rgba(244,243,240,0.4);
+            color: rgba(244,243,240,0.6); /* era 0.4, agora 0.6 */
             line-height: 1.8;
+        }
+
+        .footer a {
+            font-size: 13px;
+            color: rgba(244,243,240,0.7); /* era 0.4, agora 0.7 — muito mais legível */
+            line-height: 1.8;
+            transition: color 0.2s;
         }
 
         .footer a:hover { color: #fdc402; }
@@ -605,12 +630,13 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(244,243,240,0.06);
+            border-top: 1px solid rgba(244,243,240,0.08);
             padding-top: 24px;
             text-align: center;
             font-size: 12px;
-            color: rgba(244,243,240,0.25);
+            color: rgba(244,243,240,0.35); /* era 0.25, agora 0.35 */
         }
+
 
         /* ========== RESPONSIVO ========== */
         @media (max-width: 768px) {
@@ -710,6 +736,7 @@
     </section>
 
     <!-- ========== SOBRE + CREDENCIAIS ========== -->
+        <!-- ========== SOBRE ========== -->
     <section id="sobre" class="section sobre">
         <div class="container">
             <div class="sobre-text">
@@ -721,44 +748,39 @@
                 <p><strong>Escolhi outro caminho.</strong></p>
                 <p>Criei a Investir é Realizar e desenvolvi um método simples para ajudar pessoas — especialmente mulheres que estão começando — a organizarem seu dinheiro <strong>sem medo e sem complicação</strong>.</p>
                 <p>Porque o dinheiro é só a ferramenta. O que importa mesmo são os <span class="gold"><strong>momentos que ele torna possíveis</strong></span>.</p>
-
-                <!-- CREDENCIAIS agora aqui dentro, abaixo do "Sobre" -->
-                <div class="credentials-section">
-                    <div class="credentials-grid">
-                        <div class="credential-card">
-                            <div class="credential-icon">🏛️</div>
-                            <div class="credential-label">CEA Anbima</div>
-                            <div class="credential-desc">Especialista em Investimentos</div>
-                        </div>
-                        <div class="credential-card">
-                            <div class="credential-icon">📊</div>
-                            <div class="credential-label">CPA-20</div>
-                            <div class="credential-desc">Assessoria de Investimentos</div>
-                        </div>
-                        <div class="credential-card">
-                            <div class="credential-icon">📋</div>
-                            <div class="credential-label">Ancord</div>
-                            <div class="credential-desc">Agente Autônomo de Investimentos</div>
-                        </div>
-                        <div class="credential-card">
-                            <div class="credential-icon">🏢</div>
-                            <div class="credential-label">Experiência</div>
-                            <div class="credential-desc">XP · Santander · Orama</div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="sobre-image">
                 <img src="images/img_suellen(1).jpeg" alt="Suellen Pinto" class="sobre-photo">
-                <!--
-                    SUELLEN: Coloque sua foto aqui.
-                    <img src="images/suellen-sobre.jpg" alt="Suellen Pinto" class="sobre-photo">
-                    <div class="hero-photo-placeholder" style="width:320px;height:400px;border-radius:16px;font-size:80px;">✨</div>
-                -->
+            </div>
+        </div>
 
+        <!-- CREDENCIAIS — agora fora do grid, largura total -->
+        <div class="container" style="margin-top: 48px;">
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <div class="credential-icon">🏛️</div>
+                    <div class="credential-label">CEA Anbima</div>
+                    <div class="credential-desc">Especialista em Investimentos</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon">📊</div>
+                    <div class="credential-label">CPA-20</div>
+                    <div class="credential-desc">Assessoria de Investimentos</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon">📋</div>
+                    <div class="credential-label">Ancord</div>
+                    <div class="credential-desc">Agente Autônomo de Investimentos</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon">🏢</div>
+                    <div class="credential-label">Experiência</div>
+                    <div class="credential-desc">XP · Santander · Orama</div>
+                </div>
             </div>
         </div>
     </section>
+
 
     <!-- ========== COMO POSSO TE AJUDAR ========== -->
     <section id="ajuda" class="section">
@@ -979,8 +1001,13 @@
                 <div>
                     <h4>Contato</h4>
                     <ul class="footer-links">
-                        <li><a href="mailto:contato@investirerealizar.com.br">📧 contato@investirerealizar.com.br</a></li>
-                        <li><a href="https://www.instagram.com/suellenandradepinto/" target="_blank">📸 @suellenandradepinto</a></li>
+                        <li><a href="mailto:contato@investirerealizar.com.br">✉️ contato@investirerealizar.com.br</a></li>
+                        <li>
+                            <a href="https://www.instagram.com/suellenandradepinto/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                @suellenandradepinto
+                            </a>
+                        </li>
                         <li><a href="https://www.investirerealizar.com.br">🌐 investirerealizar.com.br</a></li>
                     </ul>
                 </div>
@@ -990,6 +1017,7 @@
             </div>
         </div>
     </footer>
+
 
     <!-- ========== SCRIPT ========== -->
     <script>

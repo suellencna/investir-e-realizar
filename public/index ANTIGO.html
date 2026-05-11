@@ -1,0 +1,1042 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investir é Realizar — Suellen Pinto | Educadora Financeira CEA Anbima</title>
+    <meta name="description" content="Educação financeira sem complicação. Organize seu dinheiro e comece a investir com segurança — mesmo do zero. Por Suellen Pinto, certificada CEA Anbima.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & BASE ========== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #033b6c;
+            color: #f4f3f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* ========== UTILITIES ========== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .gold { color: #fdc402; }
+
+        .section { padding: 80px 0; }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(253,196,2,0.12);
+            border: 1px solid rgba(253,196,2,0.25);
+            color: #fdc402;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 16px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            color: rgba(244,243,240,0.55);
+            font-size: 17px;
+            max-width: 600px;
+            margin-bottom: 48px;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(3,59,108,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 12px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Adicione isso no bloco do NAVBAR */
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1); /* torna a logo branca */
+        }
+
+        /* Se quiser manter a estrela amarela, use esta versão alternativa: */
+        /*
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            filter: brightness(2.5);
+        }
+        */
+
+        .footer-logo {
+            height: 36px;
+            width: auto;
+            margin-bottom: 12px;
+            filter: brightness(0) invert(1); /* mesma coisa no footer */
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: rgba(244,243,240,0.6);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: #fdc402; }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #f4f3f0;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #0033a0 0%, #033b6c 40%, #4e6a83 100%);
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content { max-width: 540px; }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: rgba(244,243,240,0.7);
+            font-size: 17px;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #fdc402, #ffd300);
+            color: #033b6c;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(253,196,2,0.35);
+        }
+
+        .btn-secondary {
+            color: #fdc402;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(253,196,2,0.3);
+            transition: border-color 0.2s;
+        }
+
+        .btn-secondary:hover { border-color: #fdc402; }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-photo {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(253,196,2,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .hero-photo-placeholder {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(253,196,2,0.15), rgba(253,196,2,0.05));
+            border: 4px solid rgba(253,196,2,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+        }
+
+        /* ========== SOBRE ========== */
+        .sobre .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .sobre-text h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .sobre-text p {
+            color: rgba(244,243,240,0.65);
+            font-size: 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .sobre-text p strong {
+            color: #f4f3f0;
+        }
+
+        .sobre-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .sobre-photo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        /* ========== CREDENCIAIS ========== */
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 100%; /* agora usa a largura total do container */
+        }
+
+        .credential-card {
+            background: rgba(244,243,240,0.04);
+            border: 1px solid rgba(244,243,240,0.08);
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .credential-card:hover {
+            border-color: rgba(253,196,2,0.3);
+        }
+
+        .credential-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .credential-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fdc402;
+        }
+
+        .credential-desc {
+            font-size: 12px;
+            color: rgba(244,243,240,0.45);
+            margin-top: 4px;
+        }
+
+
+        /* ========== SITUAÇÕES ========== */
+        .situacoes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .situacao-card {
+            background: rgba(244,243,240,0.04);
+            border: 1px solid rgba(244,243,240,0.08);
+            border-radius: 16px;
+            padding: 32px 24px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .situacao-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(253,196,2,0.3);
+        }
+
+        .situacao-emoji { font-size: 36px; margin-bottom: 16px; }
+
+        .situacao-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .situacao-card p {
+            color: rgba(244,243,240,0.5);
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .situacao-link {
+            color: #fdc402;
+            font-size: 13px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .situacao-link:hover { opacity: 0.8; }
+
+        /* ========== PRODUTOS ========== */
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .produto-card {
+            background: rgba(244,243,240,0.04);
+            border: 1px solid rgba(244,243,240,0.08);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(253,196,2,0.3);
+        }
+
+        .produto-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+            width: fit-content;
+        }
+
+        .tag-gratuito {
+            background: rgba(183,228,199,0.15);
+            color: #b7e4c7;
+            border: 1px solid rgba(183,228,199,0.3);
+        }
+
+        .tag-ebook {
+            background: rgba(91,112,142,0.2);
+            color: #5b708e;
+            border: 1px solid rgba(91,112,142,0.3);
+        }
+
+        .tag-programa {
+            background: rgba(253,196,2,0.15);
+            color: #fdc402;
+            border: 1px solid rgba(253,196,2,0.3);
+        }
+
+        .produto-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .produto-desc {
+            color: rgba(244,243,240,0.5);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .produto-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .produto-features li {
+            color: rgba(244,243,240,0.6);
+            font-size: 13px;
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .produto-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #fdc402;
+        }
+
+        .produto-price {
+            font-size: 14px;
+            color: rgba(244,243,240,0.4);
+            margin-bottom: 16px;
+            margin-top: auto;
+        }
+
+        .produto-price .price-current {
+            color: #fdc402;
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+        .produto-price .price-old {
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+        .produto-bonus {
+            background: rgba(253,196,2,0.08);
+            border: 1px solid rgba(253,196,2,0.15);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 13px;
+            color: #fdc402;
+            margin-bottom: 16px;
+        }
+
+        .produto-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #fdc402;
+            font-weight: 600;
+            font-size: 14px;
+            transition: gap 0.2s;
+        }
+
+        .produto-cta:hover { gap: 10px; }
+
+        .btn-produto {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #fdc402, #ffd300);
+            color: #033b6c;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: fit-content;
+        }
+
+        .btn-produto:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(253,196,2,0.3);
+        }
+
+        /* ========== FAQ ========== */
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(244,243,240,0.08);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: #f4f3f0;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+            padding: 24px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .faq-question:hover { color: #fdc402; }
+
+        .faq-arrow {
+            font-size: 18px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-arrow { transform: rotate(180deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 24px 0;
+            color: rgba(244,243,240,0.55);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ========== INSTAGRAM ========== */
+        .instagram-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .instagram-section p {
+            color: rgba(244,243,240,0.5);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .btn-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-instagram:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(225,48,108,0.3);
+        }
+
+        .instagram-icon {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: rgba(0,0,0,0.25);
+            border-top: 1px solid rgba(244,243,240,0.06);
+            padding: 48px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            height: 36px;
+            width: auto;
+            margin-bottom: 12px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #f4f3f0; /* era 0.8 de opacidade, agora totalmente visível */
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: rgba(244,243,240,0.6); /* era 0.4, agora 0.6 */
+            line-height: 1.8;
+        }
+
+        .footer a {
+            font-size: 13px;
+            color: rgba(244,243,240,0.7); /* era 0.4, agora 0.7 — muito mais legível */
+            line-height: 1.8;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover { color: #fdc402; }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(244,243,240,0.08);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(244,243,240,0.35); /* era 0.25, agora 0.35 */
+        }
+
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(3,59,108,0.98);
+                padding: 24px;
+                gap: 16px;
+                border-bottom: 1px solid rgba(244,243,240,0.08);
+            }
+            .nav-toggle { display: block; }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content { max-width: 100%; }
+            .hero h1 { font-size: 28px; }
+            .hero-buttons { align-items: center; }
+            .hero-image { order: -1; }
+            .hero-photo, .hero-photo-placeholder { width: 220px; height: 220px; }
+
+            .sobre .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .sobre-image { order: -1; }
+
+            .credentials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .situacoes-grid { grid-template-columns: 1fr; }
+            .produtos-grid { grid-template-columns: 1fr; }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .section { padding: 60px 0; }
+            .section-title { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <!--
+                    SUELLEN: Coloque sua logo em public/images/logo.png
+                    Ideal: fundo transparente, PNG, largura ~200px
+                -->
+                <img src="images/logo.png" alt="Investir é Realizar">
+            </a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#ajuda">Como ajudo</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#faq">Dúvidas</a></li>
+                <li><a href="https://comparador.investirerealizar.com.br/" target="_blank">Comparador</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="section-label">Educação financeira sem complicação</span>
+                <h1>Investir não é sobre números difíceis. É sobre <span class="gold">escolhas que aproximam você da vida que deseja viver.</span></h1>
+                <p>Eu sou a Suellen Pinto — educadora financeira com certificações ANBIMA e experiência em corretora e banco. Te ajudo a organizar seu dinheiro e começar a investir com segurança, sem economês.</p>
+                <div class="hero-buttons">
+                    <a href="https://comparador.investirerealizar.com.br/" class="btn-primary" target="_blank">📊 Comparador de Renda Fixa — gratuito</a>
+                    <a href="#produtos" class="btn-secondary">Ou comece pelos e-books →</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/IMG_2828b.jpg" alt="Suellen Pinto" class="hero-photo">
+                <!--
+                    SUELLEN: Troque pelo caminho da sua foto.
+                    Exemplo: <img src="images/suellen-hero.jpg" alt="Suellen Pinto" class="hero-photo">
+                    <div class="hero-photo-placeholder">👩🏻‍💼</div>
+                -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOBRE + CREDENCIAIS ========== -->
+        <!-- ========== SOBRE ========== -->
+    <section id="sobre" class="section sobre">
+        <div class="container">
+            <div class="sobre-text">
+                <span class="section-label">Quem sou eu</span>
+                <h2>Quem está por trás da <span class="gold">Investir é Realizar</span></h2>
+                <p>Eu sou a <strong>Suellen Pinto</strong>.</p>
+                <p>Comecei minha carreira no mercado financeiro trabalhando em corretora de valores e banco — incluindo <strong>XP e Santander</strong>.</p>
+                <p>Lá dentro, percebi algo que me incomodava: <strong>as necessidades reais do cliente raramente eram prioridade.</strong> O que importava era a meta da empresa, não o futuro de quem estava investindo. E isso não combinava com os meus valores.</p>
+                <p><strong>Escolhi outro caminho.</strong></p>
+                <p>Criei a Investir é Realizar e desenvolvi um método simples para ajudar pessoas — especialmente mulheres que estão começando — a organizarem seu dinheiro <strong>sem medo e sem complicação</strong>.</p>
+                <p>Porque o dinheiro é só a ferramenta. O que importa mesmo são os <span class="gold"><strong>momentos que ele torna possíveis</strong></span>.</p>
+            </div>
+            <div class="sobre-image">
+                <img src="images/img_suellen(1).jpeg" alt="Suellen Pinto" class="sobre-photo">
+            </div>
+        </div>
+
+        <!-- CREDENCIAIS — agora fora do grid, largura total -->
+        <div class="container" style="margin-top: 48px;">
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <div class="credential-icon">🏛️</div>
+                    <div class="credential-label">CEA Anbima</div>
+                    <div class="credential-desc">Especialista em Investimentos</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon">📊</div>
+                    <div class="credential-label">CPA-20</div>
+                    <div class="credential-desc">Assessoria de Investimentos</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon">📋</div>
+                    <div class="credential-label">Ancord</div>
+                    <div class="credential-desc">Agente Autônomo de Investimentos</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon">🏢</div>
+                    <div class="credential-label">Experiência</div>
+                    <div class="credential-desc">XP · Santander · Orama</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== COMO POSSO TE AJUDAR ========== -->
+    <section id="ajuda" class="section">
+        <div class="container">
+            <span class="section-label">Como posso te ajudar</span>
+            <h2 class="section-title">Se você se identifica com alguma dessas situações, <span class="gold">eu posso te ajudar</span></h2>
+            <p class="section-subtitle">Não importa onde você está hoje. Importa dar o primeiro passo certo.</p>
+
+            <div class="situacoes-grid">
+                <div class="situacao-card">
+                    <div class="situacao-emoji">😰</div>
+                    <h3>Não sei por onde começar com meu dinheiro</h3>
+                    <p>Você sabe que precisa se organizar, mas toda vez que tenta, parece complicado demais. Planilha não funciona, app confunde, e no fim do mês o dinheiro simplesmente some.</p>
+                    <a href="https://go.hotmart.com/T103027569U" class="situacao-link" target="_blank">Comece pelo e-book "Do Caos à Primeira Reserva" →</a>
+                </div>
+
+                <div class="situacao-card">
+                    <div class="situacao-emoji">😟</div>
+                    <h3>Tenho medo de investir e perder tudo</h3>
+                    <p>Você até juntou um dinheiro, mas ele está parado na poupança porque investir parece arriscado. Ninguém nunca te explicou de um jeito que fizesse sentido.</p>
+                    <a href="https://go.hotmart.com/J103013538B" class="situacao-link" target="_blank">Leia o "Manual do Primeiro Investimento" →</a>
+                </div>
+
+                <div class="situacao-card">
+                    <div class="situacao-emoji">🤔</div>
+                    <h3>Já invisto, mas não sei se estou no melhor investimento</h3>
+                    <p>Você tem CDB, Tesouro ou outro investimento, mas nunca comparou se existe algo que rende mais pro seu perfil. E ninguém te mostrou como fazer isso de forma simples.</p>
+                    <a href="https://comparador.investirerealizar.com.br/" class="situacao-link" target="_blank">Use o Comparador de Renda Fixa — é gratuito →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUTOS ========== -->
+    <section id="produtos" class="section">
+        <div class="container">
+            <span class="section-label">Produtos & Ferramentas</span>
+            <h2 class="section-title">Ferramentas e materiais para <span class="gold">cada etapa da sua jornada</span></h2>
+            <p class="section-subtitle">Do primeiro passo à independência financeira — no seu ritmo.</p>
+
+            <div class="produtos-grid">
+
+                <!-- Comparador -->
+                <div class="produto-card">
+                    <span class="produto-tag tag-gratuito">Gratuito</span>
+                    <h3>Comparador de Renda Fixa</h3>
+                    <p class="produto-desc">Compare CDB, LCI, LCA e Tesouro Direto lado a lado. Veja qual rende mais já com impostos e taxas descontados — de um jeito que faz sentido.</p>
+                    <div class="produto-price">
+                        <span class="price-current">R$ 0,00</span> · acesso livre
+                    </div>
+                    <a href="https://comparador.investirerealizar.com.br/" class="btn-produto" target="_blank">Acessar o Comparador →</a>
+                </div>
+
+                <!-- Upgrade Financeiro -->
+                <div class="produto-card">
+                    <span class="produto-tag tag-programa">Diagnóstico com IA</span>
+                    <h3>Upgrade Financeiro</h3>
+                    <p class="produto-desc">Receba um diagnóstico financeiro personalizado em minutos. Uma conversa com IA treinada pela Suellen que analisa seus números reais e entrega um plano de ação feito pra sua realidade. Sem planilha. Sem julgamento. Só clareza.</p>
+                    <ul class="produto-features">
+                        <li>Diagnóstico baseado nos seus números reais</li>
+                        <li>Nota de saúde financeira de 0 a 10</li>
+                        <li>Classificação do seu perfil financeiro</li>
+                        <li>Plano de ação concreto e personalizado</li>
+                        <li>Vazamentos financeiros identificados</li>
+                        <li>Acesso imediato, quantas vezes quiser</li>
+                    </ul>
+                    <div class="produto-price">
+                        <span class="price-old">R$ 47,90</span>
+                        <span class="price-current">R$ 17,90</span> · pagamento único
+                    </div>
+                    <a href="/upgrade" class="btn-produto">Quero meu diagnóstico →</a>
+                </div>
+
+                <!-- E-book 1: Do Caos à Primeira Reserva -->
+                <div class="produto-card">
+                    <span class="produto-tag tag-ebook">E-book</span>
+                    <h3>Do Caos Financeiro à Primeira Reserva</h3>
+                    <p class="produto-desc">O guia pra quem quer organizar o dinheiro — sem economês, sem medo e sem fórmula mágica. Pra quem sente que o dinheiro some antes do mês acabar.</p>
+                    <ul class="produto-features">
+                        <li>Raio-X real da sua vida financeira — sem culpa</li>
+                        <li>Identifique o que te trava e como sair do lugar essa semana</li>
+                        <li>Separe o essencial do que é escolha — sem cortar tudo</li>
+                        <li>Monte sua primeira reserva, mesmo com pouco</li>
+                    </ul>
+                    <div class="produto-bonus">🎁 Inclui planilha prática exclusiva pra aplicar tudo, mês a mês</div>
+                    <div class="produto-price">
+                        <span class="price-current">R$ 47,90</span>
+                    </div>
+                    <a href="https://go.hotmart.com/T103027569U" class="btn-produto" target="_blank">Quero me organizar →</a>
+                </div>
+
+                <!-- E-book 2: Manual do Primeiro Investimento -->
+                <div class="produto-card">
+                    <span class="produto-tag tag-ebook">E-book</span>
+                    <h3>Manual do Primeiro Investimento</h3>
+                    <p class="produto-desc">O passo a passo pra começar a investir com segurança — mesmo do zero. Pra quem cuida de tudo, mas ainda não cuida do próprio futuro financeiro.</p>
+                    <ul class="produto-features">
+                        <li>O que realmente significa investir e por onde começar</li>
+                        <li>Opções seguras para iniciantes</li>
+                        <li>Por que a poupança pode não ser a melhor escolha</li>
+                        <li>Como escolher entre banco e corretora</li>
+                        <li>Como fazer seu primeiro investimento na prática</li>
+                        <li>Ritual de 15 minutos por mês pra manter constância</li>
+                    </ul>
+                    <div class="produto-price">
+                        <span class="price-current">R$ 47,90</span>
+                    </div>
+                    <a href="https://go.hotmart.com/J103013538B" class="btn-produto" target="_blank">Quero começar a investir →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div style="text-align:center;">
+                <span class="section-label">Dúvidas frequentes</span>
+                <h2 class="section-title" style="max-width:500px;margin:0 auto 48px;">Perguntas que você <span class="gold">talvez esteja se fazendo</span></h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Preciso ter dinheiro guardado pra começar?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Não. O primeiro passo é organizar o que você já tem. O e-book "Do Caos à Primeira Reserva" te guia exatamente por esse processo — mesmo que hoje sobre pouco ou nada no fim do mês.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Não entendo nada de investimentos. O conteúdo é pra mim?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">É exatamente pra você. Todo material da Investir é Realizar é feito pensando em quem está começando do zero. Sem jargões, sem economês, sem pressão.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        O Comparador de Renda Fixa é realmente gratuito?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Sim, 100% gratuito. Você só precisa criar um cadastro rápido com nome e e-mail para acessar.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        O que é o Upgrade Financeiro?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">É um agente de IA treinado com a metodologia da Suellen. Você conversa com ele sobre sua situação financeira real — renda, gastos, dívidas — e recebe um diagnóstico personalizado com nota de saúde financeira e um plano de ação concreto. Como uma conversa entre amigas, mas com resultado profissional. Custa R$ 17,90 (pagamento único) e o acesso é imediato.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Qual a diferença entre os e-books e o Upgrade Financeiro?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Os e-books resolvem problemas específicos com conteúdo didático (organizar o dinheiro ou fazer o primeiro investimento). O Upgrade Financeiro é personalizado: ele olha pros SEUS números e te diz exatamente o que fazer primeiro, segundo e terceiro. Um é conteúdo, o outro é diagnóstico.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Como sei qual material é certo pra mim?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Se você ainda não tem controle do seu dinheiro → comece pelo e-book "Do Caos à Primeira Reserva". Se já se organiza mas nunca investiu → vá pro "Manual do Primeiro Investimento". Se quer um diagnóstico da sua situação real → Upgrade Financeiro. Se quer comparar investimentos → Comparador de Renda Fixa (gratuito).</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INSTAGRAM ========== -->
+    <section class="instagram-section">
+        <div class="container">
+            <span class="section-label">Me acompanhe</span>
+            <h2 class="section-title" style="margin-bottom:12px;">Conteúdo gratuito toda semana no <span class="gold">Instagram</span></h2>
+            <p>Dicas práticas, bastidores e reflexões sobre dinheiro e vida — sem economês.</p>
+            <a href="https://www.instagram.com/suellenandradepinto/" class="btn-instagram" target="_blank">
+                <svg class="instagram-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                @suellenandradepinto
+            </a>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="images/logo.png" alt="Investir é Realizar" class="footer-logo">
+                    <p>Educação financeira sem complicação.<br>Dinheiro é meio, não fim.</p>
+                </div>
+                <div>
+                    <h4>Links rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://comparador.investirerealizar.com.br/" target="_blank">Comparador de Renda Fixa</a></li>
+                        <li><a href="#produtos">E-books</a></li>
+                        <li><a href="/upgrade">Upgrade Financeiro</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contato@investirerealizar.com.br">✉️ contato@investirerealizar.com.br</a></li>
+                        <li>
+                            <a href="https://www.instagram.com/suellenandradepinto/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                @suellenandradepinto
+                            </a>
+                        </li>
+                        <li><a href="https://www.investirerealizar.com.br">🌐 investirerealizar.com.br</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Investir é Realizar · Suellen Pinto · Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ========== SCRIPT ========== -->
+    <script>
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const isActive = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        }
+    </script>
+
+</body>
+</html>

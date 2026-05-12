@@ -124,121 +124,118 @@
 
         .nav-links a:hover { color: #fdc402; }
 
-        /* ========== DROPDOWN ========== */
+        /* Dropdown container */
         .nav-dropdown {
-            position: relative;
+          position: relative;
         }
 
-        .nav-dropdown > a {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            cursor: pointer;
-        }
-
-        .nav-dropdown > a::after {
-            content: '▾';
-            font-size: 10px;
-            opacity: 0.6;
-            transition: transform 0.2s;
-        }
-
-        .nav-dropdown:hover > a::after {
-            transform: rotate(180deg);
+        /* Espaço invisível que "cobre" o gap entre o link e o menu */
+        .nav-dropdown::after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 16px; /* cobre o gap */
+          background: transparent;
         }
 
         .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: calc(100% + 16px);
-            left: 50%;
-            transform: translateX(-50%);
-            background: #02305a;
-            border: 1px solid rgba(253,196,2,0.15);
-            border-radius: 16px;
-            padding: 8px;
-            min-width: 680px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-            z-index: 100;
+          display: none;
+          position: absolute;
+          top: calc(100% + 16px); /* espaço visual do gap */
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(3, 59, 108, 0.98);
+          backdrop-filter: blur(16px);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 16px;
+          padding: 16px;
+          min-width: 560px;
+          display: none;
+          grid-template-columns: 1fr 1fr;
+          gap: 8px;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+          z-index: 999;
         }
 
+        /* Abre o menu ao hover no LI (não só no link) */
         .nav-dropdown:hover .dropdown-menu {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4px;
+          display: grid;
         }
 
+        /* Itens do dropdown */
         .dropdown-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 14px 16px;
-            border-radius: 10px;
-            transition: background 0.2s;
-            color: #f4f3f0;
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          padding: 14px;
+          border-radius: 12px;
+          transition: background 0.2s;
+          cursor: pointer;
         }
-
         .dropdown-item:hover {
-            background: rgba(253,196,2,0.07);
+          background: rgba(255,255,255,0.06);
         }
 
         .dropdown-item-icon {
-            font-size: 22px;
-            flex-shrink: 0;
-            margin-top: 2px;
+          font-size: 22px;
+          flex-shrink: 0;
+          margin-top: 2px;
         }
 
+        .dropdown-item-text {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
         .dropdown-item-text strong {
-            display: block;
-            font-size: 13px;
-            font-weight: 700;
-            color: #f4f3f0;
-            margin-bottom: 2px;
+          font-size: 14px;
+          font-weight: 700;
+          color: #f4f3f0;
+          display: block;
+        }
+        .dropdown-item-text span:last-child {
+          font-size: 12px;
+          color: rgba(244,243,240,0.45);
+          line-height: 1.5;
         }
 
-        .dropdown-item-text span {
-            font-size: 12px;
-            color: rgba(244,243,240,0.45);
-            line-height: 1.4;
-        }
-
+        /* Badges */
         .dropdown-badge {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 50px;
-            margin-bottom: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
+          display: inline-block;
+          font-size: 10px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          padding: 3px 8px;
+          border-radius: 50px;
+          margin-bottom: 2px;
+          width: fit-content;
         }
-
         .badge-free {
-            background: rgba(183,228,199,0.15);
-            color: #b7e4c7;
-            border: 1px solid rgba(183,228,199,0.3);
+          background: rgba(183,228,199,0.15);
+          color: #b7e4c7;
+          border: 1px solid rgba(183,228,199,0.3);
         }
-
-        .badge-paid {
-            background: rgba(180,180,200,0.12);
-            color: rgba(244,243,240,0.5);
-            border: 1px solid rgba(180,180,200,0.2);
-        }
-
         .badge-ia {
-            background: rgba(253,196,2,0.1);
-            color: rgba(253,196,2,0.8);
-            border: 1px solid rgba(253,196,2,0.25);
+          background: rgba(253,196,2,0.1);
+          color: rgba(253,196,2,0.9);
+          border: 1px solid rgba(253,196,2,0.25);
+        }
+        .badge-paid {
+          background: rgba(180,180,200,0.1);
+          color: rgba(244,243,240,0.5);
+          border: 1px solid rgba(180,180,200,0.2);
         }
 
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #f4f3f0;
-            font-size: 24px;
-            cursor: pointer;
+        /* Seta indicadora */
+        .nav-dropdown > a::after {
+          content: ' ▾';
+          font-size: 11px;
+          opacity: 0.5;
         }
+
 
         /* ========== HERO ========== */
         .hero {

@@ -1,5 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
+<!-- Checkout Hotmart -->
+<script src="https://static.hotmart.com/checkout/widget.min.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +10,7 @@
     <meta name="description" content="Mentoria para profissionais de alta renda que querem organizar seus investimentos, gerar renda previsível e reduzir a dependência do trabalho. Por Suellen Pinto, CEA Anbima.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -25,7 +28,8 @@
     src="https://www.facebook.com/tr?id=1622117472395995&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    
+
+
     <style>
         /* ========== RESET & BASE ========== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -108,6 +112,7 @@
             display: flex;
             gap: 28px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -118,6 +123,113 @@
         }
 
         .nav-links a:hover { color: #fdc402; }
+
+        /* ========== DROPDOWN ========== */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .nav-dropdown > a::after {
+            content: '▾';
+            font-size: 10px;
+            opacity: 0.6;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover > a::after {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 16px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #02305a;
+            border: 1px solid rgba(253,196,2,0.15);
+            border-radius: 16px;
+            padding: 8px;
+            min-width: 680px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            z-index: 100;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 16px;
+            border-radius: 10px;
+            transition: background 0.2s;
+            color: #f4f3f0;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(253,196,2,0.07);
+        }
+
+        .dropdown-item-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .dropdown-item-text strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #f4f3f0;
+            margin-bottom: 2px;
+        }
+
+        .dropdown-item-text span {
+            font-size: 12px;
+            color: rgba(244,243,240,0.45);
+            line-height: 1.4;
+        }
+
+        .dropdown-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 50px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .badge-free {
+            background: rgba(183,228,199,0.15);
+            color: #b7e4c7;
+            border: 1px solid rgba(183,228,199,0.3);
+        }
+
+        .badge-paid {
+            background: rgba(180,180,200,0.12);
+            color: rgba(244,243,240,0.5);
+            border: 1px solid rgba(180,180,200,0.2);
+        }
+
+        .badge-ia {
+            background: rgba(253,196,2,0.1);
+            color: rgba(253,196,2,0.8);
+            border: 1px solid rgba(253,196,2,0.25);
+        }
 
         .nav-toggle {
             display: none;
@@ -467,7 +579,7 @@
 
         .produtos-sec-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
@@ -508,6 +620,12 @@
             background: rgba(253,196,2,0.1);
             color: rgba(253,196,2,0.7);
             border: 1px solid rgba(253,196,2,0.2);
+        }
+
+        .tag-ia {
+            background: rgba(253,196,2,0.1);
+            color: rgba(253,196,2,0.8);
+            border: 1px solid rgba(253,196,2,0.25);
         }
 
         .produto-sec-card h3 {
@@ -684,6 +802,7 @@
                 border-bottom: 1px solid rgba(244,243,240,0.08);
             }
             .nav-toggle { display: block; }
+            .dropdown-menu { display: none !important; }
 
             .hero .container { grid-template-columns: 1fr; text-align: center; }
             .hero-content { max-width: 100%; }
@@ -728,6 +847,61 @@
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#mentoria">Mentoria</a></li>
                 <li><a href="#jornada">Jornada</a></li>
+
+                <!-- DROPDOWN PRODUTOS -->
+                <li class="nav-dropdown">
+                    <a href="#">Produtos</a>
+                    <div class="dropdown-menu">
+
+                        <a href="https://comparador.investirerealizar.com.br" target="_blank" class="dropdown-item">
+                            <span class="dropdown-item-icon">🧮</span>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-badge badge-free">Grátis</span>
+                                <strong>Comparador de Renda Fixa</strong>
+                                <span>Compare CDB, LCI, LCA e Tesouro Direto lado a lado — já com desconto de IR e taxas.</span>
+                            </div>
+                        </a>
+
+                        <a href="https://comparador.investirerealizar.com.br/liberdade" target="_blank" class="dropdown-item">
+                            <span class="dropdown-item-icon">📐</span>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-badge badge-free">Grátis</span>
+                                <strong>Calculadora da Liberdade Financeira</strong>
+                                <span>Descubra quanto precisa acumular e quando pode viver de renda — com cenários reais.</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.investirerealizar.com.br/upgrade/" target="_blank" class="dropdown-item">
+                            <span class="dropdown-item-icon">🤖</span>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-badge badge-ia">IA · R$ 17,90</span>
+                                <strong>Upgrade Financeiro</strong>
+                                <span>Assistente de IA que descobre para onde seu dinheiro está indo e monta um plano de ação.</span>
+                            </div>
+                        </a>
+
+                        <a href="https://go.hotmart.com/T103027569U" target="_blank" class="dropdown-item">
+                            <span class="dropdown-item-icon">📘</span>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-badge badge-paid">E-book · R$ 47,90</span>
+                                <strong>Do Caos Financeiro à Primeira Reserva</strong>
+                                <span>Para quem quer se organizar financeiramente — sem economês, sem medo, sem fórmula mágica.</span>
+                            </div>
+                        </a>
+
+                        <a href="https://go.hotmart.com/J103013538B" target="_blank" class="dropdown-item">
+                            <span class="dropdown-item-icon">📗</span>
+                            <div class="dropdown-item-text">
+                                <span class="dropdown-badge badge-paid">E-book · R$ 47,90</span>
+                                <strong>Manual do Primeiro Investimento</strong>
+                                <span>Para quem nunca investiu — ou nunca entendeu realmente onde está colocando o dinheiro.</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </li>
+                <!-- FIM DROPDOWN -->
+
                 <li><a href="#faq">Dúvidas</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -740,7 +914,8 @@
             <div class="hero-content">
                 <span class="section-label">Mentoria para profissionais de alta renda</span>
                 <h1>Você conquistou muito. Agora é hora de fazer o seu dinheiro <span class="gold">trabalhar por você.</span></h1>
-                <p>Eu ajudo médicas, executivas e profissionais liberais a organizarem seus investimentos para gerar renda previsível e reduzir a dependência do trabalho — sem ficar refém de assessor.</p>
+                <!-- TEXTO ATUALIZADO -->
+                <p>Eu ajudo mulheres a organizarem seus investimentos para gerar renda previsível e reduzir a dependência do trabalho — sem ficar refém de assessor.</p>
                 <div class="hero-buttons">
                     <a href="#contato" class="btn-primary">✉️ Quero conhecer a mentoria</a>
                     <a href="#mentoria" class="btn-secondary">Como funciona →</a>
@@ -882,7 +1057,7 @@
     <section id="jornada" class="section" style="background: rgba(0,0,0,0.1);">
         <div class="container">
             <span class="section-label">Como funciona</span>
-            <h2 class="section-title">Uma jornada de <span class="gold">6 a 8 meses</span>, construída pra você</h2>
+            <h2 class="section-title">Uma jornada de <span class="gold">6 meses</span>, construída pra você</h2>
             <p class="section-subtitle">8 encontros principais + sessões de acompanhamento. No seu ritmo. Com suporte real entre sessões.</p>
 
             <div class="jornada-grid">
@@ -991,24 +1166,39 @@
             <p class="section-subtitle">Comece por aqui. Cada material foi pensado pra um momento diferente da jornada.</p>
 
             <div class="produtos-sec-grid">
+
+                <!-- COMPARADOR -->
                 <div class="produto-sec-card">
                     <span class="produto-tag tag-gratuito">Gratuito</span>
                     <h3>Comparador de Renda Fixa</h3>
-                    <p>Compare CDB, LCI, LCA e Tesouro lado a lado. Resultado já com impostos — claro e direto.</p>
+                    <p>Compare CDB, LCI, LCA e Tesouro Direto lado a lado. Resultado já com desconto de IR e taxas — claro e direto.</p>
                     <a href="https://comparador.investirerealizar.com.br/" class="produto-sec-link" target="_blank">Acessar gratuitamente →</a>
                 </div>
+
+                <!-- UPGRADE FINANCEIRO -->
+                <div class="produto-sec-card">
+                    <span class="produto-tag tag-ia">IA · R$ 17,90</span>
+                    <h3>Upgrade Financeiro</h3>
+                    <p>Seu dinheiro está sumindo — e você nem percebe. Assistente de IA que descobre seus gastos invisíveis, calcula sua Nota de Saúde Financeira e monta um plano de ação de 7 dias.</p>
+                    <a href="https://www.investirerealizar.com.br/upgrade/" class="produto-sec-link" target="_blank">Conhecer o Upgrade →</a>
+                </div>
+
+                <!-- PRIMEIRA RESERVA -->
                 <div class="produto-sec-card">
                     <span class="produto-tag tag-ebook">E-book · R$ 47,90</span>
                     <h3>Do Caos Financeiro à Primeira Reserva</h3>
-                    <p>Para quem quer se organizar financeiramente — sem economês, sem medo, sem fórmula mágica.</p>
+                    <p>Para quem quer se organizar financeiramente — sem economês, sem medo, sem fórmula mágica. Inclui planilha prática exclusiva.</p>
                     <a href="https://go.hotmart.com/T103027569U" class="produto-sec-link" target="_blank">Conhecer o e-book →</a>
                 </div>
+
+                <!-- MANUAL DO INVESTIDOR -->
                 <div class="produto-sec-card">
                     <span class="produto-tag tag-ebook">E-book · R$ 47,90</span>
                     <h3>Manual do Primeiro Investimento</h3>
-                    <p>Para quem nunca investiu — ou nunca entendeu realmente onde está colocando o dinheiro.</p>
+                    <p>Para quem nunca investiu — ou nunca entendeu realmente onde está colocando o dinheiro. Linguagem simples, zero economês.</p>
                     <a href="https://go.hotmart.com/J103013538B" class="produto-sec-link" target="_blank">Conhecer o e-book →</a>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1103,6 +1293,7 @@
                         <li><a href="#jornada">Como funciona</a></li>
                         <li><a href="#contato">Falar com a Suellen</a></li>
                         <li><a href="https://comparador.investirerealizar.com.br/" target="_blank">Comparador gratuito</a></li>
+                        <li><a href="https://www.investirerealizar.com.br/upgrade/" target="_blank">Upgrade Financeiro</a></li>
                     </ul>
                 </div>
                 <div>

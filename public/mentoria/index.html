@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<script src="https://static.hotmart.com/checkout/widget.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoria Investir é Realizar — Suellen Pinto | CEA Anbima</title>
+    <meta name="description" content="Mentoria individual para mulheres de alta renda que querem entender seus investimentos, construir autonomia financeira e saber quando podem desacelerar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1622117472395995');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1622117472395995&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        /* ========== RESET & BASE ========== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #033b6c;
+            color: #f4f3f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* ========== UTILITIES ========== */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .gold { color: #fdc402; }
+        .section { padding: 80px 0; }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(253,196,2,0.12);
+            border: 1px solid rgba(253,196,2,0.25);
+            color: #fdc402;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 16px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            color: rgba(244,243,240,0.55);
+            font-size: 17px;
+            max-width: 600px;
+            margin-bottom: 48px;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(3,59,108,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 12px 0;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            font-size: 14px;
+            color: rgba(244,243,240,0.6);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #fdc402; }
+        .nav-links a.active { color: #fdc402; }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #fdc402, #ffd300);
+            color: #033b6c !important;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 700 !important;
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(253,196,2,0.3);
+            color: #033b6c !important;
+        }
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #f4f3f0;
+        }
+
+        /* ========== HERO MENTORIA ========== */
+        .hero-mentoria {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #0033a0 0%, #033b6c 40%, #4e6a83 100%);
+        }
+        .hero-mentoria .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero-content { max-width: 540px; }
+        .hero-mentoria h1 {
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-mentoria p {
+            color: rgba(244,243,240,0.7);
+            font-size: 17px;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #fdc402, #ffd300);
+            color: #033b6c;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(253,196,2,0.35);
+        }
+        .btn-secondary {
+            color: #fdc402;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(253,196,2,0.3);
+            transition: border-color 0.2s;
+        }
+        .btn-secondary:hover { border-color: #fdc402; }
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-photo {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(253,196,2,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        /* ========== DOR / IDENTIFICAÇÃO ========== */
+        .dor-section {
+            background: rgba(0,0,0,0.2);
+            border-top: 1px solid rgba(244,243,240,0.06);
+            border-bottom: 1px solid rgba(244,243,240,0.06);
+        }
+        .dor-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .dor-card {
+            background: rgba(244,243,240,0.04);
+            border: 1px solid rgba(244,243,240,0.08);
+            border-radius: 16px;
+            padding: 32px 24px;
+            transition: border-color 0.2s;
+        }
+        .dor-card:hover { border-color: rgba(253,196,2,0.3); }
+        .dor-emoji { font-size: 32px; margin-bottom: 16px; }
+        .dor-card p {
+            color: rgba(244,243,240,0.65);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .dor-card p strong { color: #f4f3f0; }
+
+        /* ========== TRANSFORMAÇÃO ========== */
+        .transformacao-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(244,243,240,0.08);
+            margin-bottom: 64px;
+        }
+        .transformacao-col { padding: 40px; }
+        .transformacao-col.antes {
+            background: rgba(0,0,0,0.25);
+            border-right: 1px solid rgba(244,243,240,0.06);
+        }
+        .transformacao-col.depois { background: rgba(253,196,2,0.06); }
+        .transformacao-col h3 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 24px;
+            color: rgba(244,243,240,0.4);
+        }
+        .transformacao-col.depois h3 { color: #fdc402; }
+        .transformacao-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            color: rgba(244,243,240,0.65);
+            line-height: 1.5;
+        }
+        .transformacao-col.depois .transformacao-item { color: rgba(244,243,240,0.85); }
+        .t-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+
+        /* ========== MENTORA ========== */
+        .mentora-section .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .mentora-text h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+        .mentora-text p {
+            color: rgba(244,243,240,0.65);
+            font-size: 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        .mentora-text p strong { color: #f4f3f0; }
+        .mentora-image { display: flex; justify-content: center; }
+        .mentora-photo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 48px;
+        }
+        .credential-card {
+            background: rgba(244,243,240,0.04);
+            border: 1px solid rgba(244,243,240,0.08);
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+        .credential-card:hover { border-color: rgba(253,196,2,0.3); }
+        .credential-icon { font-size: 28px; margin-bottom: 8px; }
+        .credential-label { font-size: 14px; font-weight: 700; color: #fdc402; }
+        .credential-desc { font-size: 12px; color: rgba(244,243,240,0.45); margin-top: 4px; }
+
+        /* ========== JORNADA ========== */
+        .jornada-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .jornada-card {
+            background: rgba(244,243,240,0.04);
+            border: 1px solid rgba(244,243,240,0.08);
+            border-radius: 16px;
+            padding: 28px 24px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .jornada-card:hover {
+            border-color: rgba(253,196,2,0.3);
+            transform: translateY(-4px);
+        }
+        .jornada-num {
+            font-size: 12px;
+            font-weight: 700;
+            color: #fdc402;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .jornada-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+        .jornada-card p { font-size: 14px; color: rgba(244,243,240,0.5); line-height: 1.7; }
+
+        /* ========== ENTREGÁVEIS ========== */
+        .entregaveis-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .entregavel-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: rgba(244,243,240,0.04);
+            border: 1px solid rgba(244,243,240,0.08);
+            border-radius: 12px;
+            padding: 20px 22px;
+        }
+        .entregavel-icon { font-size: 24px; flex-shrink: 0; }
+        .entregavel-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .entregavel-text p { font-size: 13px; color: rgba(244,243,240,0.5); line-height: 1.6; }
+
+        /* ========== CTA ========== */
+        .cta-mentoria {
+            background: linear-gradient(135deg, rgba(0,51,160,0.4), rgba(3,59,108,0.6));
+            border: 1px solid rgba(253,196,2,0.2);
+            border-radius: 24px;
+            padding: 64px 48px;
+            text-align: center;
+        }
+        .cta-mentoria h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .cta-mentoria p {
+            color: rgba(244,243,240,0.6);
+            font-size: 17px;
+            max-width: 560px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+        .cta-obs {
+            margin-top: 16px;
+            font-size: 13px;
+            color: rgba(244,243,240,0.35);
+        }
+
+        /* ========== INSTAGRAM ========== */
+        .instagram-section { text-align: center; padding: 60px 0; }
+        .instagram-section p { color: rgba(244,243,240,0.5); font-size: 16px; margin-bottom: 24px; }
+        .btn-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-instagram:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(225,48,108,0.3);
+        }
+
+        /* ========== FAQ ========== */
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(244,243,240,0.08); }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: #f4f3f0;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+            padding: 24px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .faq-question:hover { color: #fdc402; }
+        .faq-arrow { font-size: 18px; transition: transform 0.3s; flex-shrink: 0; }
+        .faq-item.active .faq-arrow { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer-inner {
+            padding: 0 0 24px 0;
+            color: rgba(244,243,240,0.55);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: rgba(0,0,0,0.25);
+            border-top: 1px solid rgba(244,243,240,0.06);
+            padding: 48px 0 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+        .footer-logo { height: 36px; width: auto; margin-bottom: 12px; filter: brightness(0) invert(1); }
+        .footer h4 { font-size: 14px; font-weight: 700; margin-bottom: 16px; color: #f4f3f0; }
+        .footer p { font-size: 13px; color: rgba(244,243,240,0.6); line-height: 1.8; }
+        .footer a { font-size: 13px; color: rgba(244,243,240,0.7); line-height: 1.8; transition: color 0.2s; }
+        .footer a:hover { color: #fdc402; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .footer-bottom {
+            border-top: 1px solid rgba(244,243,240,0.08);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(244,243,240,0.35);
+        }
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 64px; left: 0; right: 0;
+                background: rgba(3,59,108,0.98);
+                padding: 24px;
+                gap: 16px;
+                border-bottom: 1px solid rgba(244,243,240,0.08);
+                z-index: 999;
+            }
+            .nav-toggle { display: block; }
+            .hero-mentoria .container { grid-template-columns: 1fr; text-align: center; }
+            .hero-content { max-width: 100%; }
+            .hero-mentoria h1 { font-size: 28px; }
+            .hero-buttons { align-items: center; }
+            .hero-image { order: -1; }
+            .hero-photo { width: 240px; height: 240px; }
+            .dor-grid { grid-template-columns: 1fr; }
+            .transformacao-grid { grid-template-columns: 1fr; }
+            .transformacao-col.antes { border-right: none; border-bottom: 1px solid rgba(244,243,240,0.06); }
+            .mentora-section .container { grid-template-columns: 1fr; text-align: center; }
+            .mentora-image { order: -1; }
+            .credentials-grid { grid-template-columns: repeat(2, 1fr); }
+            .jornada-grid { grid-template-columns: 1fr; }
+            .entregaveis-grid { grid-template-columns: 1fr; }
+            .cta-mentoria { padding: 40px 24px; }
+            .cta-mentoria h2 { font-size: 24px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .section { padding: 60px 0; }
+            .section-title { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="nav-logo">
+                <img src="../images/logo.png" alt="Investir é Realizar">
+            </a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+            <ul class="nav-links">
+                <li><a href="/#sobre">Sobre</a></li>
+                <li><a href="/mentoria" class="active">Mentoria</a></li>
+                <li><a href="/#materiais">Materiais</a></li>
+                <li><a href="#contato" class="nav-cta">Falar com a Suellen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero-mentoria">
+        <div class="container">
+            <div class="hero-content">
+                <span class="section-label">Mentoria individual · Vagas limitadas</span>
+                <h1>Antes da mentoria, você torce pra dar certo.<br><span class="gold">Depois, você sabe que vai.</span></h1>
+                <p>Uma jornada de 6 meses para organizar seus investimentos, entender cada decisão e construir um plano real de liberdade financeira.</p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn-primary">💬 Quero conhecer a mentoria</a>
+                    <a href="#jornada" class="btn-secondary">Como funciona →</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../images/IMG_2828b.jpg" alt="Suellen Pinto" class="hero-photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VOCÊ SE IDENTIFICA ========== -->
+    <section class="dor-section section">
+        <div class="container">
+            <span class="section-label">Você se identifica?</span>
+            <h2 class="section-title">Ganha bem. Investe há anos.<br>Mas ainda sente <span class="gold">aquele incômodo surdo.</span></h2>
+            <p class="section-subtitle">Se você marcou sim pra qualquer uma dessas situações, essa mentoria foi feita pra você.</p>
+            <div class="dor-grid">
+                <div class="dor-card">
+                    <div class="dor-emoji">😟</div>
+                    <p><strong>Tem assessor, mas não confia.</strong> Ele roda a carteira, você assente, e no fundo fica com a sensação de que pode estar perdendo dinheiro ou tempo.</p>
+                </div>
+                <div class="dor-card">
+                    <div class="dor-emoji">⏰</div>
+                    <p><strong>Não sabe quando vai poder desacelerar.</strong> Quer viver — não só trabalhar. Mas não tem um número, não tem um plano, e isso pesa mais a cada ano.</p>
+                </div>
+                <div class="dor-card">
+                    <div class="dor-emoji">🤐</div>
+                    <p><strong>Sente vergonha de não saber mais.</strong> Ganha muito, mas não entende a própria carteira. E não fala disso com ninguém. Esse silêncio custa caro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRANSFORMAÇÃO ========== -->
+    <section id="mentoria" class="section">
+        <div class="container">
+            <span class="section-label">A mentoria</span>
+            <h2 class="section-title">O que muda quando você tem<br><span class="gold">um plano de verdade.</span></h2>
+            <p class="section-subtitle">Porque você passa a ter o mapa, os critérios e a autonomia pra garantir isso.</p>
+
+            <div class="transformacao-grid">
+                <div class="transformacao-col antes">
+                    <h3>Antes</h3>
+                    <div class="transformacao-item">
+                        <span class="t-icon">❌</span>
+                        <span>Não sabe quanto precisa acumular pra ter a renda que quer</span>
+                    </div>
+                    <div class="transformacao-item">
+                        <span class="t-icon">❌</span>
+                        <span>Não entende a própria carteira — só confia (ou tenta confiar) no assessor</span>
+                    </div>
+                    <div class="transformacao-item">
+                        <span class="t-icon">❌</span>
+                        <span>Aceita tudo que sugerem sem questionar. Não sabe quanto paga de taxa.</span>
+                    </div>
+                    <div class="transformacao-item">
+                        <span class="t-icon">❌</span>
+                        <span>Sente culpa, vergonha e medo toda vez que pensa em dinheiro</span>
+                    </div>
+                    <div class="transformacao-item">
+                        <span class="t-icon">❌</span>
+                        <span>Não sabe se vai poder desacelerar — e adia essa resposta</span>
+                    </div>
+                </div>
+                <div class="transformacao-col depois">
+                    <h3>Depois</h3>
+                    <div class="transformacao-item">
+                        <span class="t-icon">✅</span>
+                        <span>Sabe o número exato da sua liberdade — com prazo e caminho claro</span>
+                    </div>
+                    <div class="transformacao-item">
+                        <span class="t-icon">✅</span>
+                        <span>Entende por que cada investimento está na carteira — e o que faz sentido</span>
+                    </div>
+                    <div class="transformacao-item">
+                        <span class="t-icon">✅</span>
+                        <span>Tem critérios próprios pra avaliar qualquer produto. Conversa com o assessor de igual pra igual.</span>
+                    </div>
+                    <div class="transformacao-item">
+                        <span class="t-icon">✅</span>
+                        <span>Sente confiança e controle. Toma decisões com base em lógica, não em medo.</span>
+                    </div>
+                    <div class="transformacao-item">
+                        <span class="t-icon">✅</span>
+                        <span>Tem um plano real. Sabe quando pode escolher trabalhar menos — e o que fazer até lá.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== QUEM SERÁ SUA MENTORA ========== -->
+    <section class="section mentora-section" style="background: rgba(0,0,0,0.1);">
+        <div class="container">
+            <div class="mentora-text">
+                <span class="section-label">Quem será sua mentora</span>
+                <h2>Trabalhei dentro do sistema.<br><span class="gold">Escolhi outro caminho.</span></h2>
+                <p>Sou <strong>Suellen Pinto</strong>, especialista em investimentos com certificações <strong>CEA e CPA-20 Anbima</strong>.</p>
+                <p>Comecei no mercado financeiro dentro de corretoras e bancos — <strong>Órama, XP e Santander</strong>. Lá dentro, percebi algo que me incomodava: as necessidades reais do cliente raramente eram a prioridade. O que mandava era a meta da empresa.</p>
+                <p>Isso não combinava com os meus valores. <strong>Escolhi outro caminho.</strong></p>
+                <p>Criei a <strong>Investir é Realizar</strong> para ajudar mulheres de alta renda a entenderem seus próprios investimentos, tomarem decisões com autonomia — e terem um plano que serve à vida que querem viver.</p>
+                <p>Porque <span class="gold"><strong>dinheiro é meio, não fim.</strong></span></p>
+            </div>
+            <div class="mentora-image">
+                <img src="../images/img_suellen(1).jpeg" alt="Suellen Pinto" class="mentora-photo">
+            </div>
+        </div>
+        <div class="container">
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <div class="credential-icon">🏛️</div>
+                    <div class="credential-label">CEA Anbima</div>
+                    <div class="credential-desc">Especialista em Investimentos</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon">📊</div>
+                    <div class="credential-label">CPA-20</div>
+                    <div class="credential-desc">Assessoria de Investimentos</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon">📋</div>
+                    <div class="credential-label">Ancord</div>
+                    <div class="credential-desc">Agente Autônomo de Investimentos</div>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-icon">🏢</div>
+                    <div class="credential-label">Experiência</div>
+                    <div class="credential-desc">XP · Santander · Órama</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== JORNADA ========== -->
+    <section id="jornada" class="section">
+        <div class="container">
+            <span class="section-label">Como funciona</span>
+            <h2 class="section-title">Uma jornada de <span class="gold">6 meses</span>, construída pra você</h2>
+            <p class="section-subtitle">8 encontros principais + sessões de acompanhamento. No seu ritmo. Com suporte real entre sessões.</p>
+
+            <div class="jornada-grid">
+                <div class="jornada-card">
+                    <div class="jornada-num">Fase 1</div>
+                    <h3>🪞 Espelho</h3>
+                    <p>Diagnóstico completo da sua situação financeira real. Sem julgamento. Pela primeira vez, você vê tudo num lugar só — com clareza.</p>
+                </div>
+                <div class="jornada-card">
+                    <div class="jornada-num">Fase 2</div>
+                    <h3>🎯 Destino</h3>
+                    <p>Calculamos o seu número da liberdade. Não é mais "uns milhões". É um número exato — com prazo, cenários e caminho para chegar lá.</p>
+                </div>
+                <div class="jornada-card">
+                    <div class="jornada-num">Fase 3</div>
+                    <h3>🔍 Diagnóstico</h3>
+                    <p>Cada ativo da sua carteira passa por um filtro de 7 critérios. Você entende o que serve, o que não serve, e quanto está pagando de taxa sem perceber.</p>
+                </div>
+                <div class="jornada-card">
+                    <div class="jornada-num">Fase 4</div>
+                    <h3>🗺️ Estratégia</h3>
+                    <p>Construímos seu Plano de Voo: alocação, aportes, renda, e como a estratégia se comporta diante dos imprevistos da vida real.</p>
+                </div>
+                <div class="jornada-card">
+                    <div class="jornada-num">Fase 5</div>
+                    <h3>💪 Autonomia</h3>
+                    <p>Você aprende o framework das 7 Perguntas pra avaliar qualquer investimento — e pratica dizer não ao assessor com segurança.</p>
+                </div>
+                <div class="jornada-card">
+                    <div class="jornada-num">Fase 6</div>
+                    <h3>🎓 Formatura</h3>
+                    <p>Quando você consegue analisar uma proposta sozinha e tomar decisão com confiança — você está pronta. E caminha com autonomia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ENTREGÁVEIS ========== -->
+    <section class="section" style="background: rgba(0,0,0,0.1);">
+        <div class="container">
+            <span class="section-label">O que você leva</span>
+            <h2 class="section-title">Ferramentas reais para <span class="gold">o resto da vida</span></h2>
+            <p class="section-subtitle">Não é conteúdo genérico. É o seu plano, feito pra sua realidade.</p>
+
+            <div class="entregaveis-grid">
+                <div class="entregavel-item">
+                    <span class="entregavel-icon">📍</span>
+                    <div class="entregavel-text">
+                        <h4>Número da Liberdade calculado</h4>
+                        <p>Quanto você precisa acumular pra gerar a renda que quer — com prazo e cenários reais.</p>
+                    </div>
+                </div>
+                <div class="entregavel-item">
+                    <span class="entregavel-icon">🗺️</span>
+                    <div class="entregavel-text">
+                        <h4>Plano de Voo personalizado</h4>
+                        <p>Documento de uma página com tudo: onde está, pra onde vai, e como chega lá.</p>
+                    </div>
+                </div>
+                <div class="entregavel-item">
+                    <span class="entregavel-icon">🔎</span>
+                    <div class="entregavel-text">
+                        <h4>Diagnóstico completo da carteira</h4>
+                        <p>Análise de cada ativo por critérios objetivos — sem opinião, sem achismo.</p>
+                    </div>
+                </div>
+                <div class="entregavel-item">
+                    <span class="entregavel-icon">✅</span>
+                    <div class="entregavel-text">
+                        <h4>Framework das 7 Perguntas</h4>
+                        <p>Filtro de decisão que você usa pra sempre antes de aceitar qualquer investimento.</p>
+                    </div>
+                </div>
+                <div class="entregavel-item">
+                    <span class="entregavel-icon">🗣️</span>
+                    <div class="entregavel-text">
+                        <h4>Script de conversa com o assessor</h4>
+                        <p>Frases prontas pra questionar, negociar e dizer não — com segurança e sem constrangimento.</p>
+                    </div>
+                </div>
+                <div class="entregavel-item">
+                    <span class="entregavel-icon">🧭</span>
+                    <div class="entregavel-text">
+                        <h4>Autonomia real — pra sempre</h4>
+                        <p>Você sai da mentoria sabendo cuidar do seu dinheiro. Sem depender de ninguém pra isso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRÓXIMO PASSO / CONTATO ========== -->
+    <section id="contato" class="section">
+        <div class="container">
+            <div class="cta-mentoria">
+                <span class="section-label">Próximo passo</span>
+                <h2>Pronta pra ter um plano de verdade?</h2>
+                <p>A mentoria é individual, personalizada e com vagas limitadas. Entre em contato e entenda se faz sentido pra você — sem compromisso.</p>
+                <a href="https://wa.me/5512997129797?text=Ol%C3%A1%2C%20Suellen!%20Quero%20saber%20mais%20sobre%20a%20mentoria." class="btn-primary" target="_blank">💬 Falar com a Suellen no WhatsApp</a>
+                <p class="cta-obs">Ou escreva para contato@investirerealizar.com.br</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INSTAGRAM ========== -->
+    <section class="instagram-section">
+        <div class="container">
+            <span class="section-label">Me acompanhe</span>
+            <h2 class="section-title" style="margin-bottom:12px;">Conteúdo gratuito toda semana no <span class="gold">Instagram</span></h2>
+            <p>Dicas práticas, reflexões sobre dinheiro e vida — sem economês.</p>
+            <a href="https://www.instagram.com/suellenandradepinto/" class="btn-instagram" target="_blank">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                @suellenandradepinto
+            </a>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="section" style="background: rgba(0,0,0,0.1);">
+        <div class="container">
+            <div style="text-align:center;">
+                <span class="section-label">Dúvidas frequentes</span>
+                <h2 class="section-title" style="max-width:500px;margin:0 auto 48px;">Perguntas que você <span class="gold">provavelmente está se fazendo</span></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        A mentoria é pra mim se eu já tenho um assessor?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Sim — e especialmente pra você. A mentoria não substitui o assessor. Ela te dá autonomia pra entender o que ele está fazendo, questionar quando necessário, e tomar decisões com base nos seus objetivos — não nos dele. Muitas clientes saem da mentoria conversando com o assessor de igual pra igual pela primeira vez.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Você vai me indicar quais ativos comprar?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Não. Isso seria assessoria de investimentos — e não é o que a mentoria entrega. O que eu faço é te ajudar a entender sua situação, definir seus objetivos, analisar sua carteira por critérios e te dar autonomia pra tomar suas próprias decisões. Você sai sabendo avaliar qualquer produto — sem depender de mim ou de ninguém.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Quanto tempo dura a mentoria?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">A jornada completa tem 8 sessões quinzenais (cerca de 4 meses) mais sessões de acompanhamento mensal. No total, o processo dura entre 6 e 8 meses — dependendo do seu ritmo. Cada sessão principal tem cerca de 60 minutos, e você tem suporte via WhatsApp em horário comercial entre os encontros.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Preciso ter muito dinheiro investido pra entrar na mentoria?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">A mentoria foi pensada para profissionais de alta renda que já investem, mas sem estratégia clara — com patrimônio investido a partir de R$ 200 mil e renda acima de R$ 20 mil por mês. Se você se encaixa nesse perfil, faz sentido conversar.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Como sei se está na hora certa pra mentoria?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Se você já conquistou muito, mas ainda sente aquela sensação de que o dinheiro não está trabalhando direito — e não sabe quando vai poder desacelerar — provavelmente é a hora. Entre em contato e a gente conversa sem compromisso pra entender se faz sentido.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="../images/logo.png" alt="Investir é Realizar" class="footer-logo">
+                    <p>Mentoria para profissionais de alta renda.<br>Dinheiro é meio, não fim.</p>
+                </div>
+                <div>
+                    <h4>Links rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#sobre">Sobre a Suellen</a></li>
+                        <li><a href="/mentoria">A mentoria</a></li>
+                        <li><a href="/#materiais">Materiais</a></li>
+                        <li><a href="#contato">Falar com a Suellen</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contato@investirerealizar.com.br">✉️ contato@investirerealizar.com.br</a></li>
+                        <li><a href="https://www.instagram.com/suellenandradepinto/" target="_blank">📸 @suellenandradepinto</a></li>
+                        <li><a href="https://investirerealizar.com.br">🌐 investirerealizar.com.br</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Investir é Realizar · Suellen Pinto · Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+            });
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        }
+
+        // Fecha menu mobile ao clicar em link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

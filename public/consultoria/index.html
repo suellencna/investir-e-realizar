@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria de Investimentos — Investir é Realizar | Suellen Pinto · CVM</title>
+    <meta name="description" content="Consultoria de investimentos independente, registrada na CVM. Cuidamos do seu patrimônio com estratégia personalizada, remuneração por fee e acompanhamento contínuo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1622117472395995');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1622117472395995&ev=PageView&noscript=1"/></noscript>
+    <script>fbq('track', 'ViewContent', {content_name: 'Consultoria'});</script>
+
+    <style>
+        /* ========== DESIGN TOKENS ========== */
+        :root {
+            --navy: #0e2240;
+            --navy-light: #132c52;
+            --navy-mid: #122848;
+            --gold: #c9a55a;
+            --gold-light: #d4b46a;
+            --gold-glow: rgba(201,165,90,0.15);
+            --gold-border: rgba(201,165,90,0.2);
+            --text-primary: #e8e6e1;
+            --text-secondary: rgba(232,230,225,0.6);
+            --text-muted: rgba(232,230,225,0.4);
+            --border-subtle: rgba(232,230,225,0.06);
+            --card-bg: rgba(232,230,225,0.03);
+            --card-border: rgba(232,230,225,0.06);
+            --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* ========== RESET & BASE ========== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--navy);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* ========== UTILITIES ========== */
+        .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+        .gold { color: var(--gold); }
+        .section { padding: 120px 0; }
+
+        .section-label {
+            display: inline-block;
+            color: var(--gold);
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .section-label::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            margin-top: 12px;
+        }
+        .section-label.centered::after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 17px;
+            font-weight: 300;
+            max-width: 560px;
+            margin-bottom: 56px;
+            line-height: 1.8;
+        }
+
+        /* ========== FADE-IN ANIMATION ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(14,34,64,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 16px 0;
+            transition: padding 0.3s;
+        }
+        .navbar.scrolled { padding: 10px 0; }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo img {
+            height: 36px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a.active { color: var(--gold); }
+
+        .nav-cta {
+            background: transparent;
+            color: var(--gold) !important;
+            padding: 10px 24px;
+            border-radius: 2px;
+            border: 1px solid var(--gold-border);
+            font-weight: 500 !important;
+            letter-spacing: 1px;
+            font-size: 11px !important;
+            text-transform: uppercase;
+            transition: all 0.3s !important;
+        }
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--navy) !important;
+            border-color: var(--gold);
+        }
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            background: linear-gradient(160deg, #112a50 0%, var(--navy) 50%, #0e2240 100%);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(201,165,90,0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+        }
+        .hero-content { max-width: 560px; }
+        .hero-label {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--gold-border);
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 28px;
+            letter-spacing: -0.02em;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+        .hero-desc {
+            color: var(--text-secondary);
+            font-size: 17px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 480px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 16px 36px;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 30px rgba(201,165,90,0.25);
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            padding: 16px 0;
+            transition: color 0.3s;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .btn-outline:hover { color: var(--gold); border-color: var(--gold-border); }
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-photo-wrapper {
+            position: relative;
+        }
+        .hero-photo-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -12px; left: -12px;
+            right: 12px; bottom: 12px;
+            border: 1px solid var(--gold-border);
+        }
+        .hero-photo {
+            width: 400px;
+            height: 480px;
+            object-fit: cover;
+            filter: grayscale(15%);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ========== PARA QUEM É ========== */
+        .para-quem-section {
+            background: var(--navy-mid);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .para-quem-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+        .para-quem-card {
+            padding: 40px 32px;
+            border-left: 1px solid var(--gold-border);
+            transition: border-color 0.3s;
+        }
+        .para-quem-card:hover { border-color: var(--gold); }
+        .para-quem-card h4 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .para-quem-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* ========== PILARES ========== */
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .pilar-card {
+            padding: 0;
+        }
+        .pilar-number {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 400;
+            color: var(--gold);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        .pilar-card h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .pilar-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        .pilar-divider {
+            width: 32px;
+            height: 1px;
+            background: var(--gold-border);
+            margin: 20px 0;
+        }
+
+        /* ========== CTA BANNER ========== */
+        .cta-banner {
+            background: var(--navy-mid);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 60px 0;
+        }
+        .cta-banner .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        .cta-banner p {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 400;
+            max-width: 500px;
+            line-height: 1.4;
+        }
+
+        /* ========== COMO FUNCIONA ========== */
+        .etapas-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: var(--border-subtle);
+        }
+        .etapa-card {
+            background: var(--navy);
+            padding: 48px 40px;
+            position: relative;
+        }
+        .etapa-card::before {
+            content: attr(data-step);
+            font-family: var(--font-display);
+            font-size: 72px;
+            font-weight: 400;
+            color: var(--gold);
+            opacity: 0.07;
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            line-height: 1;
+        }
+        .etapa-card h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .etapa-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 300;
+            line-height: 1.8;
+            position: relative;
+            max-width: 380px;
+        }
+        .etapa-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 16px;
+            position: relative;
+        }
+
+        /* ========== O QUE INCLUI ========== */
+        .inclui-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .inclui-item {
+            padding: 28px 32px;
+            border: 1px solid var(--card-border);
+            border-left: 2px solid var(--gold-border);
+            transition: border-color 0.3s;
+        }
+        .inclui-item:hover { border-color: var(--gold-border); border-left-color: var(--gold); }
+        .inclui-text h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+        .inclui-text p { font-size: 13px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+
+        /* ========== CONSULTORA ========== */
+        .consultora-section { background: var(--navy-mid); }
+        .consultora-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .consultora-photo-wrapper {
+            position: relative;
+        }
+        .consultora-photo-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -16px; right: -16px;
+            left: 16px; top: 16px;
+            border: 1px solid var(--gold-border);
+            z-index: 0;
+        }
+        .consultora-photo {
+            width: 100%;
+            max-width: 420px;
+            object-fit: cover;
+            filter: grayscale(15%);
+            position: relative;
+            z-index: 1;
+        }
+        .consultora-text h2 {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 28px;
+            line-height: 1.25;
+        }
+        .consultora-text p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+        .consultora-text p strong { color: var(--text-primary); font-weight: 500; }
+        .credentials-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .credential-tag {
+            display: inline-flex;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border: 1px solid var(--card-border);
+            line-height: 1;
+            white-space: nowrap;
+            transition: border-color 0.3s;
+        }
+        .credential-tag:hover { border-color: var(--gold-border); }
+        .credential-tag .tag-label { color: var(--gold); font-weight: 600; margin-right: 8px; }
+
+        /* ========== CTA FINAL ========== */
+        .cta-final {
+            text-align: center;
+            position: relative;
+        }
+        .cta-final::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201,165,90,0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-final .section-label::after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-final h2 {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.25;
+            position: relative;
+        }
+        .cta-final p {
+            color: var(--text-secondary);
+            font-size: 17px;
+            font-weight: 300;
+            max-width: 520px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            position: relative;
+        }
+        .cta-final .btn-primary { position: relative; }
+        .cta-obs {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        /* ========== INSTAGRAM ========== */
+        .instagram-section {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .instagram-section p { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; font-weight: 300; }
+        .btn-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            padding: 12px 28px;
+            border: 1px solid var(--card-border);
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+        .btn-instagram:hover {
+            border-color: var(--gold-border);
+            color: var(--gold);
+        }
+
+        /* ========== FAQ ========== */
+        .faq-section { background: var(--navy-mid); }
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border-subtle); }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 400;
+            text-align: left;
+            padding: 28px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            transition: color 0.3s;
+        }
+        .faq-question:hover { color: var(--gold); }
+        .faq-arrow {
+            font-size: 14px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            color: var(--gold);
+            opacity: 0.5;
+        }
+        .faq-item.active .faq-arrow { transform: rotate(180deg); opacity: 1; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-answer-inner {
+            padding: 0 0 28px 0;
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* ========== DISCLAIMER CVM ========== */
+        .disclaimer-section {
+            border-top: 1px solid var(--border-subtle);
+            padding: 40px 0;
+        }
+        .disclaimer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .disclaimer-content p {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 6px;
+        }
+        .disclaimer-content p strong { color: var(--text-secondary); }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: rgba(0,0,0,0.2);
+            border-top: 1px solid var(--border-subtle);
+            padding: 56px 0 36px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 56px;
+            margin-bottom: 48px;
+        }
+        .footer-logo {
+            height: 32px;
+            width: auto;
+            margin-bottom: 16px;
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
+        }
+        .footer h4 {
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        .footer a {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 2;
+            font-weight: 300;
+            transition: color 0.3s;
+        }
+        .footer a:hover { color: var(--gold); }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+        .footer-bottom {
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 768px) {
+            .container { padding: 0 24px; }
+            .section { padding: 80px 0; }
+            .section-title { font-size: 30px; }
+            .nav-links { display: none; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 68px; left: 0; right: 0;
+                background: rgba(14,34,64,0.98);
+                backdrop-filter: blur(20px);
+                padding: 28px 32px;
+                gap: 20px;
+                border-bottom: 1px solid var(--border-subtle);
+                z-index: 999;
+            }
+            .nav-toggle { display: block; }
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 48px;
+            }
+            .hero-content { max-width: 100%; }
+            .hero h1 { font-size: 32px; }
+            .hero-desc { max-width: 100%; }
+            .hero-buttons { justify-content: center; flex-wrap: wrap; }
+            .hero-image { order: -1; }
+            .hero-photo { width: 280px; height: 340px; }
+            .hero-photo-wrapper::before { display: none; }
+            .para-quem-grid { grid-template-columns: 1fr; }
+            .pilares-grid { grid-template-columns: 1fr; gap: 48px; }
+            .etapas-grid { grid-template-columns: 1fr; }
+            .inclui-grid { grid-template-columns: 1fr; }
+            .consultora-grid { grid-template-columns: 1fr; text-align: center; }
+            .consultora-photo-wrapper { max-width: 300px; margin: 0 auto; }
+            .consultora-photo-wrapper::after { display: none; }
+            .credentials-row { justify-content: center; }
+            .cta-banner .container { flex-direction: column; text-align: center; }
+            .cta-banner p { font-size: 20px; }
+            .cta-final h2 { font-size: 30px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+            .credentials-row { gap: 8px; }
+            .credential-tag { font-size: 11px; padding: 6px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="nav-logo">
+                <img src="../images/logo.png" alt="Investir é Realizar">
+            </a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+            <ul class="nav-links">
+                <li><a href="/#sobre">Sobre</a></li>
+                <li><a href="/mentoria">Mentoria</a></li>
+                <li><a href="/consultoria" class="active">Consultoria</a></li>
+                <li><a href="/#materiais">Materiais</a></li>
+                <li><a href="#contato" class="nav-cta">Falar com a Suellen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <span class="hero-label">Consultoria de Investimentos · CVM</span>
+                <h1>Alguém cuidando do seu patrimônio com <em>o seu interesse</em> em primeiro lugar.</h1>
+                <p class="hero-desc">Consultoria independente, registrada na CVM. Estratégia personalizada, acompanhamento contínuo e remuneração por fee — transparente e sem conflito de interesse.</p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn-primary">Quero conhecer a consultoria</a>
+                    <a href="#como-funciona" class="btn-outline">Como funciona →</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <div class="hero-photo-wrapper">
+                    <img src="../images/IMG_2828b.jpg" alt="Suellen Pinto — Consultora de Investimentos CVM" class="hero-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PARA QUEM É ========== -->
+    <section class="para-quem-section section">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-label">Para quem é</span>
+                <h2 class="section-title">Você já conquistou muito.<br>Agora quer que seu patrimônio <em class="gold">trabalhe com estratégia.</em></h2>
+                <p class="section-subtitle">A consultoria é para quem já tem patrimônio construído e quer uma gestão profissional, personalizada e independente.</p>
+            </div>
+            <div class="para-quem-grid fade-in">
+                <div class="para-quem-card">
+                    <h4>Profissional de alta renda que não tem tempo</h4>
+                    <p>Você se dedica à carreira e precisa de alguém que cuide dos seus investimentos com a mesma seriedade que você cuida do seu trabalho.</p>
+                </div>
+                <div class="para-quem-card">
+                    <h4>Tem patrimônio, mas sente que não está rendendo o que deveria</h4>
+                    <p>Falta saber qual a melhor estratégia para alcançar seus <em>objetivos de vida</em>.</p>
+                </div>
+                <div class="para-quem-card">
+                    <h4>Usa vários bancos e corretoras</h4>
+                    <p>Gostaria de integrar as estratégias de forma que utilize o melhor que cada uma tem a oferecer.</p>
+                </div>
+                <div class="para-quem-card">
+                    <h4>Quer delegar com confiança</h4>
+                    <p>Não quer aprender a fazer sozinho — quer alguém competente e independente fazendo recomendações pensadas exclusivamente pra você.</p>
+                </div>
+            </div>
+            <p class="fade-in" style="margin-top:40px; font-size:14px; color:var(--text-muted); font-weight:300;">Está construindo patrimônio? <a href="/mentoria" style="color:var(--gold); border-bottom:1px solid var(--gold-border); padding-bottom:1px; transition:border-color 0.3s;">Conheça a mentoria →</a></p>
+        </div>
+    </section>
+
+    <!-- ========== PILARES ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-label">O que você ganha</span>
+                <h2 class="section-title">Três pilares que fazem<br><em class="gold">toda a diferença</em></h2>
+                <p class="section-subtitle">Uma consultoria construída para que seu dinheiro cresça — não para que você compre mais um produto.</p>
+            </div>
+            <div class="pilares-grid fade-in">
+                <div class="pilar-card">
+                    <div class="pilar-number">01</div>
+                    <h3>Independência total</h3>
+                    <div class="pilar-divider"></div>
+                    <p>Sem vínculo com banco ou corretora. As recomendações são baseadas no que é melhor pra você — e em mais nada.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-number">02</div>
+                    <h3>Estratégia personalizada</h3>
+                    <div class="pilar-divider"></div>
+                    <p>Cada plano é construído para o seu perfil, seus objetivos e seu momento de vida. Nada genérico, nada de prateleira.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-number">03</div>
+                    <h3>Acompanhamento contínuo</h3>
+                    <div class="pilar-divider"></div>
+                    <p>Não é uma análise pontual — é um cuidado permanente. Revisões periódicas, ajustes de rota e suporte quando você precisar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA BANNER ========== -->
+    <section class="cta-banner">
+        <div class="container">
+            <p>Quer entender se a consultoria faz sentido <em class="gold">pro seu momento?</em></p>
+            <a href="https://wa.me/5511997574995?text=Ol%C3%A1%2C%20Suellen!%20Quero%20saber%20mais%20sobre%20a%20consultoria%20de%20investimentos." class="btn-primary" target="_blank">Conversar com a Suellen</a>
+        </div>
+    </section>
+
+    <!-- ========== COMO FUNCIONA ========== -->
+    <section id="como-funciona" class="section">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-label">Como funciona</span>
+                <h2 class="section-title">Um processo claro,<br><em class="gold">do diagnóstico ao acompanhamento</em></h2>
+                <p class="section-subtitle">Cada etapa tem um propósito. Você sabe exatamente o que está acontecendo com o seu dinheiro — sempre.</p>
+            </div>
+            <div class="etapas-grid fade-in">
+                <div class="etapa-card" data-step="01">
+                    <h3>Onboarding e diagnóstico</h3>
+                    <p>Levantamento completo do seu patrimônio: o que tem, onde está, quanto rende, quais as taxas. Questionário de perfil de risco, entendimento dos seus objetivos de vida e horizonte de tempo.</p>
+                    <span class="etapa-tag">Plano de Investimento</span>
+                </div>
+                <div class="etapa-card" data-step="02">
+                    <h3>Recomendações trimestrais</h3>
+                    <p>Análise da carteira comparada à estratégia definida. Identificação de desvios, recomendação de ajustes e contextualização com cenário macroeconômico — Selic, inflação, câmbio.</p>
+                    <span class="etapa-tag">Relatório + reunião</span>
+                </div>
+                <div class="etapa-card" data-step="03">
+                    <h3>Acompanhamento contínuo</h3>
+                    <p>Disponibilidade para dúvidas entre os trimestres. Comunicação proativa em eventos relevantes de mercado. Rebalanceamento quando necessário, sem esperar o próximo ciclo.</p>
+                    <span class="etapa-tag">Suporte contínuo via WhatsApp</span>
+                </div>
+                <div class="etapa-card" data-step="04">
+                    <h3>Revisão anual</h3>
+                    <p>Reavaliação completa: mudanças de vida, revisão do perfil de risco, ajuste de metas e realocação estratégica do patrimônio.</p>
+                    <span class="etapa-tag">Revisão completa de alocação</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== O QUE ESTÁ INCLUSO ========== -->
+    <section class="section" style="background: var(--navy-mid);">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-label">O que está incluso</span>
+                <h2 class="section-title">Tudo o que você precisa para investir<br><em class="gold">com clareza e segurança</em></h2>
+                <p class="section-subtitle">Não é um relatório genérico. É um acompanhamento personalizado para o seu patrimônio.</p>
+            </div>
+            <div class="inclui-grid fade-in">
+                <div class="inclui-item">
+                    <div class="inclui-text">
+                        <h4>Diagnóstico financeiro completo</h4>
+                        <p>Mapeamento de patrimônio, renda, objetivos e perfil de risco — tudo organizado em um só lugar.</p>
+                    </div>
+                </div>
+                <div class="inclui-item">
+                    <div class="inclui-text">
+                        <h4>Plano de investimentos personalizado</h4>
+                        <p>Alocação estratégica construída pra seus objetivos, com recomendações concretas de produtos e proporções.</p>
+                    </div>
+                </div>
+                <div class="inclui-item">
+                    <div class="inclui-text">
+                        <h4>Relatórios trimestrais</h4>
+                        <p>Análise da carteira, desempenho comparado à estratégia e recomendações de ajuste — com reunião para discussão.</p>
+                    </div>
+                </div>
+                <div class="inclui-item">
+                    <div class="inclui-text">
+                        <h4>Alertas proativos de mercado</h4>
+                        <p>Comunicação em eventos relevantes que afetam sua carteira — sem esperar você perguntar.</p>
+                    </div>
+                </div>
+                <div class="inclui-item">
+                    <div class="inclui-text">
+                        <h4>Suporte contínuo via WhatsApp</h4>
+                        <p>Dúvidas sobre investimentos, oportunidades ou decisões — atendimento em horário comercial entre os ciclos.</p>
+                    </div>
+                </div>
+                <div class="inclui-item">
+                    <div class="inclui-text">
+                        <h4>Visão independente do mercado</h4>
+                        <p>Análise de produtos de qualquer instituição — sem se limitar ao catálogo de uma corretora específica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== QUEM É SUA CONSULTORA ========== -->
+    <section class="section consultora-section">
+        <div class="container">
+            <div class="consultora-grid fade-in">
+                <div class="consultora-photo-wrapper">
+                    <img src="../images/img_suellen(1).jpeg" alt="Suellen Pinto — Consultora CVM" class="consultora-photo">
+                </div>
+                <div class="consultora-text">
+                    <span class="section-label">Quem é sua consultora</span>
+                    <h2>Trabalhei dentro do mercado financeiro. <em class="gold">Escolhi o lado do cliente.</em></h2>
+                    <p>Sou <strong>Suellen Andrade Pinto</strong>, consultora de valores mobiliários autorizada pela CVM, certificada pela Anbima (<strong>CPA, C-Pro R, C-Pro I</strong>) e <strong>ANCORD</strong>.</p>
+                    <p>Passei por <strong>Órama, XP e Santander</strong>. Entendi como o mercado funciona por dentro — e decidi criar algo diferente.</p>
+                    <p>A <strong>Investir é Realizar</strong> nasceu pra ser o que eu gostaria que existisse: uma consultoria onde o único interesse é o do cliente.</p>
+                    <div class="credentials-row">
+                        <span class="credential-tag"><span class="tag-label">CVM</span> Consultora autorizada</span>
+                        <span class="credential-tag"><span class="tag-label">CPA</span> Anbima</span>
+                        <span class="credential-tag"><span class="tag-label">C-Pro R</span> Anbima</span>
+                        <span class="credential-tag"><span class="tag-label">C-Pro I</span> Anbima</span>
+                        <span class="credential-tag"><span class="tag-label">ANCORD</span></span>
+                        <span class="credential-tag"><span class="tag-label">XP</span> Santander · Órama</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA FINAL ========== -->
+    <section id="contato" class="section cta-final">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-label centered">Próximo passo</span>
+                <h2>Vamos conversar sobre<br><em class="gold">o seu patrimônio?</em></h2>
+                <p>Uma conversa <strong>gratuita</strong>, sem compromisso, pra entender sua situação e ver se a consultoria faz sentido pro seu momento.</p>
+                <a href="https://wa.me/5511997574995?text=Ol%C3%A1%2C%20Suellen!%20Quero%20saber%20mais%20sobre%20a%20consultoria%20de%20investimentos." class="btn-primary" target="_blank">Falar com a Suellen no WhatsApp</a>
+                <p class="cta-obs">Ou escreva para contato@investirerealizar.com.br</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INSTAGRAM ========== -->
+    <section class="instagram-section">
+        <div class="container fade-in">
+            <span class="section-label centered">Me acompanhe</span>
+            <h2 class="section-title" style="font-size:28px;margin-bottom:12px;"><em class="gold">Instagram</em></h2>
+            <p>Conteúdo gratuito toda semana — sem economês.</p>
+            <a href="https://www.instagram.com/suellenandradepinto/" class="btn-instagram" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                @suellenandradepinto
+            </a>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="section faq-section">
+        <div class="container">
+            <div style="text-align:center;" class="fade-in">
+                <span class="section-label centered">Dúvidas frequentes</span>
+                <h2 class="section-title" style="max-width:500px;margin:0 auto 56px;">Perguntas que você <em class="gold">provavelmente está se fazendo</em></h2>
+            </div>
+            <div class="faq-list fade-in">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Qual a diferença entre consultoria e assessoria de investimentos?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">A principal diferença está na remuneração. O assessor é remunerado pela corretora — geralmente por comissão sobre os produtos que indica. A consultora independente é remunerada por fee, pago diretamente por você. Isso alinha os interesses: a recomendação é baseada no que faz sentido pro seu perfil, não no que gera comissão. A consultoria é regulamentada pela CVM (Resolução nº 19/2021) e exige registro específico.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Preciso sair da minha corretora atual?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Não necessariamente. A consultoria é independente — eu analiso sua carteira onde ela estiver. Se fizer sentido manter na mesma corretora, ótimo. Se houver opções melhores em outra instituição, eu indico. A escolha é sempre sua, com informação transparente.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Como funciona a remuneração da consultoria?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">A consultoria é remunerada por fee fixo mensal, como uma assinatura mensal, definido de acordo com a faixa de patrimônio sob consultoria. Você paga diretamente pelo serviço — sem nenhuma comissão de produtos ou corretoras envolvida. Conversamos sobre valores na primeira conversa, sem compromisso.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Você vai executar as operações por mim?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Não. A consultoria recomenda — você executa na sua corretora. Isso é uma proteção: ninguém movimenta seu dinheiro sem sua aprovação. Eu acompanho cada operação, tiro dúvidas em tempo real, mas a decisão final e a execução são suas. É assim que funciona pela regulação da CVM.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        A consultoria é diferente da mentoria "Planejando o Futuro"?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Sim. A mentoria é um processo educacional com prazo definido — você aprende a tomar decisões de investimento com autonomia. A consultoria é um serviço contínuo: você delega a gestão estratégica do patrimônio e eu acompanho, recomendo e reviso periodicamente. Se você prefere aprender a gerir sozinho, a mentoria é o caminho. Se quer alguém cuidando disso pra você, a consultoria é a melhor opção.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        O que é o registro na CVM?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">A CVM (Comissão de Valores Mobiliários) é o órgão que regula o mercado de capitais no Brasil. O registro como consultora de valores mobiliários (Resolução CVM nº 19/2021) garante que o profissional segue regras rígidas de conduta, incluindo a obrigação de agir no melhor interesse do cliente, manter independência e total transparência sobre a remuneração.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        A consultoria é pra quem já tem muito dinheiro investido?
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">A consultoria é voltada para quem já tem patrimônio acumulado e quer uma gestão estratégica e independente. Se você está começando e prefere aprender os fundamentos primeiro, a mentoria "Planejando o Futuro" pode ser mais adequada pro seu momento. Na dúvida, entre em contato e vamos avaliar juntas.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DISCLAIMER CVM ========== -->
+    <section class="disclaimer-section">
+        <div class="container">
+            <div class="disclaimer-content">
+                <p><strong>Aviso legal</strong></p>
+                <p>Suellen Andrade Pinto é Consultora de Valores Mobiliários autorizada pela Comissão de Valores Mobiliários (CVM), nos termos da Resolução CVM nº 19/2021. A atividade de consultoria de valores mobiliários é exercida de forma independente, sem vínculo com instituições financeiras, corretoras de valores ou distribuidoras de títulos e valores mobiliários.</p>
+                <p>A consultoria não realiza operações em nome do cliente nem tem custódia sobre o patrimônio. Todas as recomendações são personalizadas e baseadas no perfil e nos objetivos individuais de cada cliente. Rentabilidade passada não é garantia de resultados futuros. Todo investimento envolve riscos, incluindo a possível perda do capital investido.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="../images/logo.png" alt="Investir é Realizar" class="footer-logo">
+                    <p>Consultoria de investimentos independente.<br>Autorizada pela CVM · Resolução nº 19/2021</p>
+                </div>
+                <div>
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#sobre">Sobre a Suellen</a></li>
+                        <li><a href="/mentoria">Mentoria</a></li>
+                        <li><a href="/consultoria">Consultoria</a></li>
+                        <li><a href="/#materiais">Materiais</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contato@investirerealizar.com.br">contato@investirerealizar.com.br</a></li>
+                        <li><a href="https://www.instagram.com/suellenandradepinto/" target="_blank">@suellenandradepinto</a></li>
+                        <li><a href="https://investirerealizar.com.br">investirerealizar.com.br</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Investir é Realizar · Suellen Andrade Pinto · Consultora de Valores Mobiliários CVM
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+            });
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        }
+
+        // Fecha menu mobile ao clicar
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
